@@ -1,0 +1,29 @@
+[
+    {
+        "sem": "1",
+        "courses": [
+            {
+                "id": "CS327",
+                "name": "Compiler Design"
+            },
+            {
+                "id": "CS328",
+                "name": "Intro to Data Science"
+            }
+        ]
+    },
+    {
+        "sem": "2",
+        "courses": [
+            {
+                "id": "CS329",
+                "name": "Compiler Design"
+            },
+            {
+                "id": "CS313",
+                "name": "Intro to Data Science"
+            }
+        ]
+    }
+
+]

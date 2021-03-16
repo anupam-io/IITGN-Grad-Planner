@@ -8,36 +8,30 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/test-data
     useCreateIndex: true
 });
 
-// Creating schema
-mongoose.model('semester', new mongoose.Schema(
-    {
-        number: {type: Number},
-        listOfCourses: {type: [String]},
-    },
-    {versionKey: false}
-));
-
+// Importing schema for default courses
+const {defaultCoursesSchema} = require('./schemas/defaultCourses');
 // The main schema object which we will use to query
-const Semesters = mongoose.model('semester');
+const defaultCourses = mongoose.model('DCS', defaultCoursesSchema);
+
 
 // Adding and deleting
 async function main(){
     // Resetting the document
-    await Semesters.deleteMany({});
+    await defaultCourses.deleteMany({});
 
     // Inserting some data values
-    data = require("./initData/sem.json");
+    data = require("./initData/defaultCourses.json");
     for(i=0; i<data.length; i++){
-        await Semesters.create({
-            number: data[i].number,
+        await defaultCourses.create({
+            sem: data[i].sem,
             listOfCourses: data[i].courses
         });
     }
 
     // Showing values
-    console.log(await Semesters.find());
-
+    console.log(await defaultCourses.find());
     
+    // Exiting...
     return process.exit(0);
 }
 main()

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var cors = require('cors');
 
 // IMPORT MODELS
-require('./models/Product');
+// require('./models/Product');
 
 
 const app = express();
