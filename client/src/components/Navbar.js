@@ -9,16 +9,14 @@ import { LinkContainer } from 'react-router-bootstrap';
 import './Navbar.css'
 import Login from '../pages/Login';
 import Logout from '../pages/Logout';
-
-const Plans = () => <span>About</span>;
+import Dashboard from '../pages/Dashboard';
 
 function NavBar()
 {
     return (
         <MemoryRouter>
         <Container className="p-3">
-        <Jumbotron>
-            <h1 className="header">Welcome To React-Bootstrap</h1>
+            <h1 className="header">Welcome To Your Graduation Planner</h1>
             <h2>
             <ButtonToolbar className="custom-btn-toolbar">
                 <LinkContainer to="/login">
@@ -38,14 +36,13 @@ function NavBar()
                 <Login />
                 </Route>
                 <Route path="/plans">
-                <Plans />
+                <Dashboard allPlans= {["Plan1", "Plan2", "Plan3"]}/>
                 </Route>
                 <Route path="/logout">
                 <Logout />
                 </Route>
             </Switch>
             </h2>
-        </Jumbotron>
         </Container>
         </MemoryRouter>
     );
