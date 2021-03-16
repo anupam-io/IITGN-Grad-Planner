@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
 defaultCoursesSchema = new mongoose.Schema({
-    sem: String,
-    listOfCourses: [{id: String, name: String}],
+    courseCode: String,
+    courseTitle: String,
+    courseType: String,
+    courseCredits: Number
 }, {versionKey: false});
 
 module.exports = {defaultCoursesSchema}

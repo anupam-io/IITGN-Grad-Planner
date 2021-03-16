@@ -1,29 +1,20 @@
 [
     {
-        "sem": "1",
-        "courses": [
-            {
-                "id": "CS327",
-                "name": "Compiler Design"
-            },
-            {
-                "id": "CS328",
-                "name": "Intro to Data Science"
-            }
-        ]
+        "courseCode": "ES001",
+        "courseTitle": "Advanced Computing",
+        "courseType": "BS",
+        "courseCredits": 3
     },
     {
-        "sem": "2",
-        "courses": [
-            {
-                "id": "CS329",
-                "name": "Compiler Design"
-            },
-            {
-                "id": "CS313",
-                "name": "Intro to Data Science"
-            }
-        ]
+        "courseCode": "ES002",
+        "courseTitle": "ADvacne scien",
+        "courseType": "BS",
+        "courseCredits": 3
+    },
+    {
+        "courseCode": "ES112",
+        "courseTitle": "Advanced Comauting",
+        "courseType": "BS",
+        "courseCredits": 5
     }
-
 ]

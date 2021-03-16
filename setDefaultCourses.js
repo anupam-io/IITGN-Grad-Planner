@@ -23,12 +23,16 @@ async function main(){
     data = require("./initData/defaultCourses.json");
     for(i=0; i<data.length; i++){
         await defaultCourses.create({
-            sem: data[i].sem,
-            listOfCourses: data[i].courses
+            courseCode: data[i].courseCode,
+            courseTitle: data[i].courseTitle,
+            courseType: data[i].courseType,
+            courseCredits: data[i].courseCredits
         });
+        // console.log(data[i]);
     }
 
     // Showing values
+    console.log("All courses");
     console.log(await defaultCourses.find());
     
     // Exiting...
