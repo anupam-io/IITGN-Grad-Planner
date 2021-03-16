@@ -9,8 +9,7 @@
     "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node index.js",
-    "course": "node setCourses.js",
-    "sem": "node setSem.js"
+    "d": "node setCourses.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +18,8 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.0"
+    "mongoose": "^5.12.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",

@@ -1,10 +1,20 @@
 [
     {
-        "id": "CS327",
-        "name": "Compiler Design"
+        "courseCode": "ES001",
+        "courseTitle": "Advanced Computing",
+        "courseType": "BS",
+        "courseCredits": 3
     },
     {
-        "id": "CS328",
-        "name": "Intro to Data Science"
+        "courseCode": "ES002",
+        "courseTitle": "ADvacne scien",
+        "courseType": "BS",
+        "courseCredits": 3
+    },
+    {
+        "courseCode": "ES112",
+        "courseTitle": "Advanced Comauting",
+        "courseType": "BS",
+        "courseCredits": 5
     }
 ]

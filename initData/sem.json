@@ -1,16 +1,7 @@
 [
     {
-        "number": "1",
-        "courses": [
-            "1", "2", "3", "5", "8"
-        ],
-        "dean": "Jaison"
-    },
-    {
-        "number": "2",
-        "courses": [
-            "10", "12", "32", "12"
-        ],
-        "dean": "Sk"
+        "total_credits": 26,
+        "SPI": 7.77,
+        "courses": ["ES112"]
     }
 ]
