@@ -1,0 +1,1074 @@
+[
+  { "id": "FP 100", "name": "Foundation Programme*", "credits": "4" },
+  {
+    "id": "MA 101",
+    "name": "Mathematics I*",
+    "credits": "4",
+    "profs": [
+      "Arnab Saha (I+T)\nAkshaa Vatwani (I+T)\nAtul Dixit (I+ T)\nBipul Saurabh (T)\nSanjay Amrutiya (T)\nFatma Cicek (T)"
+    ]
+  },
+  {
+    "id": "ES 101",
+    "name": "Engineering Graphics*",
+    "credits": "3",
+    "profs": [
+      "Kaustubh Rane (I+T)",
+      "Amit Prashant (T)",
+      "Abhijit Mishra (T)",
+      "Jayaprakash KR (T)"
+    ]
+  },
+  { "id": "ES 102", "name": "Introduction to Computing*", "credits": "3" },
+  { "id": "ES 112", "name": "Computing*", "credits": "3" },
+  {
+    "id": "ES 103",
+    "name": "Introduction to Electrical Systems",
+    "credits": "4",
+    "profs": ["Naran Pindoriya (I+T)"]
+  },
+  {
+    "id": "BE 101",
+    "name": "Introduction to Life Sciences: Fundamentals of Life*",
+    "credits": "4"
+  },
+  { "id": "HS 101", "name": "English Studies*", "credits": "4" },
+  { "id": "HS 102", "name": "Pleasures of English Studies*", "credits": "4" },
+  { "id": "HS 104(R)", "name": "Foundational Sanskrit*", "credits": "4" },
+  { "id": "HS 103", "name": "French studies*", "credits": "4" },
+  {
+    "id": "PE 101",
+    "name": "Physical Education (to be offered)",
+    "credits": "0"
+  },
+  {
+    "id": "HS 221",
+    "name": "Introduction to Philosophy",
+    "credits": "4",
+    "profs": ["Jaison Manjaly"]
+  },
+  {
+    "id": "MA 201",
+    "name": "Mathematics III",
+    "credits": "4",
+    "profs": [
+      "JagmohanTyagi (I+T)\nV. D. Sharma (I+T)\nMohan Joshi (I+T)\nArpan Bhattacharya (T)\nVinod Chandra (T) Satyajit Pramanik (T)"
+    ]
+  },
+  {
+    "id": "CH 201",
+    "name": "General Chemistry",
+    "credits": "4",
+    "profs": ["Saumyakanti (I)", "Sairam (I)", "Sudhanshu (I)"]
+  },
+  {
+    "id": "ES 201",
+    "name": "Introduction to Design and Innovation",
+    "credits": "4",
+    "profs": [
+      "Manasi Kanetkar (I+L)",
+      "Siddharth Srivastava (L)",
+      "Khushboo Shah (L)"
+    ]
+  },
+  {
+    "id": "ES 211",
+    "name": "Thermodynamics (CL, ME & MSE)",
+    "credits": "4",
+    "profs": [
+      "Atul Bhargav (I)",
+      "Uddipta Ghosh (T)",
+      "Raghavan Ranganathan (T)",
+      "Chinmay Ghoroi(T)"
+    ]
+  },
+  {
+    "id": "ES 203",
+    "name": "Digital Systems \nfor EE & CSE students",
+    "credits": "4",
+    "profs": ["Joycee Mekie (I+T+L)"]
+  },
+  {
+    "id": "EE 221",
+    "name": "Electronic Devices (EE Students)",
+    "credits": "3",
+    "profs": ["Arup Chakraborty (I+T)"]
+  },
+  {
+    "id": "CE 201",
+    "name": "Earth Materials and Processes\nfor CE students",
+    "credits": "4",
+    "profs": ["Vikrant Jain (I+L)"]
+  },
+  {
+    "id": "CL 201",
+    "name": "Chemical Process Calculations\nfor CL students",
+    "credits": "2",
+    "profs": ["Kaustubh Rane (I+T)"]
+  },
+  {
+    "id": "ES 242",
+    "name": "Data Structures and Algorithms - I (CS Students)",
+    "credits": "3",
+    "profs": ["Neeldhara Misra (I+L)"],
+    "type": ["CSE"]
+  },
+  {
+    "id": "ES 202",
+    "name": "Introduction to Materials\nfor MSE students",
+    "credits": "4",
+    "profs": ["Abhijit Misra (I+T)"]
+  },
+  {
+    "id": "ES 321",
+    "name": "Dynamics and Vibrations \nfor ME students",
+    "credits": "4",
+    "profs": ["Jayaprakash KR (I+T)", "Vineet Vashista (I+T)"]
+  },
+  {
+    "id": "CL 221",
+    "name": "Chemical Engineering Thermodynamics",
+    "credits": "4",
+    "profs": ["Prachi Thereja (I+T)"]
+  },
+  {
+    "id": "ES 311",
+    "name": "Heat and Mass Transfer",
+    "credits": "4",
+    "profs": ["Sameer Dalvi (I+T)", "Jaichander Swaminathan (T)"]
+  },
+  {
+    "id": "CL 322",
+    "name": "Chemical Reaction Engineering",
+    "credits": "4",
+    "profs": ["Mithun Radhakrishna (I+T)"]
+  },
+  {
+    "id": "CL 351",
+    "name": "Heat Transfer and Thermodynamics Lab",
+    "credits": "2"
+  },
+  {
+    "id": "CL 425",
+    "name": "Process Synthesis and Design",
+    "credits": "4",
+    "profs": ["Nitin Padhiyar (I+T)"]
+  },
+  {
+    "id": "CL 451",
+    "name": "Process Dynamics and Control Lab",
+    "credits": "2"
+  },
+  {
+    "id": "CE 302",
+    "name": "Structural Analysis",
+    "credits": "4",
+    "profs": ["Gaurav Srivastava (I+T)"]
+  },
+  {
+    "id": "CE 301A",
+    "name": "Soil Mechanics  (this course has been split into theory CE 301A and  lab CE 301B components, the theory component would be taught this sem, and lab component would be taught next semester)",
+    "credits": "4",
+    "profs": ["Ajanta Sachan (I+T)"]
+  },
+  {
+    "id": "CE 308A",
+    "name": "Water Resource Engineering (this course has been split into theory CE 308A and  lab CE 308B components, the theory component would be taught this sem, and lab component would be taught next semester)",
+    "credits": "3",
+    "profs": ["Udit Bhatia (I+L)"]
+  },
+  { "id": "CE 303", "name": "Geospatial Engineering", "credits": "3" },
+  {
+    "id": "CE 401",
+    "name": "Comprehensive Project - I",
+    "credits": "4",
+    "profs": ["Manish Kumar (L)"]
+  },
+  {
+    "id": "CS 302",
+    "name": "Theory of Computation",
+    "credits": "4",
+    "profs": ["Balagopal (I+T)"],
+    "type": ["CSE"]
+  },
+  {
+    "id": "CS 301",
+    "name": "Operating Systems",
+    "credits": "5",
+    "profs": ["Nipun Batra (I+L)"],
+    "type": ["CSE"]
+  },
+  {
+    "id": "ES 331",
+    "name": "Probability and Random Processes",
+    "credits": "4",
+    "profs": ["Shanmuganathan Raman (I+T)"]
+  },
+  {
+    "id": "EE 332",
+    "name": "Power Systems",
+    "credits": "4",
+    "profs": ["Ragavan K (I+T)"]
+  },
+  {
+    "id": "ES 331",
+    "name": "Probability and Random Processes",
+    "credits": "4",
+    "profs": ["Shanmuganathan Raman (I+T)"]
+  },
+  {
+    "id": "EE 321",
+    "name": "Analog Circuits",
+    "credits": "5",
+    "profs": ["Nihar Mohapatra (I+T+L)", "Himanshu Shekhar (L)"]
+  },
+  {
+    "id": "EE 311",
+    "name": "Electromagnetic Waves",
+    "credits": "4",
+    "profs": ["Ravi Hegde (I+T)"]
+  },
+  {
+    "id": "EE 411",
+    "name": "Digital Signal Processing",
+    "credits": "4",
+    "profs": ["Uttama Lahiri (I+T)", "Madhu Vadali (T)"]
+  },
+  {
+    "id": "EE 431",
+    "name": "Electrical Systems Lab",
+    "credits": "2",
+    "profs": ["S Rajendran (L)"]
+  },
+  {
+    "id": "ES 311",
+    "name": "Heat and Mass Transfer",
+    "credits": "4",
+    "profs": ["Sameer Dalvi (I+T)", "Jaichander Swaminathan (T)"]
+  },
+  {
+    "id": "ME 321",
+    "name": "Mechanics of Deformable Bodies",
+    "credits": "4",
+    "profs": ["Ravi Sastri Ayyagari (I+T)"]
+  },
+  {
+    "id": "ME 331",
+    "name": "Manufacturing Processes and Systems",
+    "credits": "4",
+    "profs": ["Madhu Vadali (I)", "N. Ramakrishnan"]
+  },
+  {
+    "id": "ME 461",
+    "name": "Integrated Design and Manufacturing II",
+    "credits": "2",
+    "profs": ["N. Ramakrishnan (T+L)"]
+  },
+  {
+    "id": "MSE 303",
+    "name": "Mechanical Behaviour of Materials (more details on lab component would be shared soon)",
+    "credits": "5",
+    "profs": ["Pradipta Ghosh (I+L)"]
+  },
+  {
+    "id": "MSE 304",
+    "name": "Principles of Metal Extraction and Refining",
+    "credits": "4",
+    "profs": ["S. P. Mehrotra (I)"]
+  },
+  {
+    "id": "MSE 305",
+    "name": "Advanced Materials",
+    "credits": "4",
+    "profs": ["Superb Misra (I)"]
+  },
+  {
+    "id": "MSE 310",
+    "name": "Physics of Materials",
+    "credits": "4",
+    "profs": ["Gopinathan Kalon (I+T)"]
+  },
+  {
+    "id": "MSE 402",
+    "name": "Computational Process Design",
+    "credits": "4",
+    "profs": ["Raghavan Ranganathan (I+T)"]
+  },
+  {
+    "id": "BE 303",
+    "name": "Bionanotechnology \u2013 Principles and Applications",
+    "credits": "4",
+    "profs": ["Dhiraj Bhatia"],
+    "type": ["BS Elective"]
+  },
+  {
+    "id": "BE 304",
+    "name": "Introduction to Biomedical Engineering",
+    "credits": "4",
+    "profs": ["Karla Mercado-Shekhar"],
+    "type": ["BS Elective"]
+  },
+  {
+    "id": "BE 607",
+    "name": "Molecular and Cellular Biotechnology",
+    "credits": "4",
+    "profs": ["Sharmistha Majumdar"],
+    "type": ["BS Elective"]
+  },
+  {
+    "id": "BE 608",
+    "name": "Molecular Basis of Neurodegenerative Diseases",
+    "credits": "4",
+    "profs": ["Sharad Gupta"],
+    "type": ["BS Elective"]
+  },
+  {
+    "id": "BE 610",
+    "name": "Molecular Oncology",
+    "credits": "4",
+    "profs": ["Umashankar Singh"],
+    "type": ["BS Elective"]
+  },
+  {
+    "id": "CE 601A",
+    "name": "Advanced Geotechnical Engineering (this course has been split into theory CE 601A and  lab CE 601B components, the theory component would be taught this sem, and lab component would be taught next semester)",
+    "credits": "4",
+    "profs": ["Ajanta Sachan"]
+  },
+  {
+    "id": "CE 603",
+    "name": "Constitutive Models in Soil Mechanics",
+    "credits": "4",
+    "profs": ["Amit Prashant"]
+  },
+  {
+    "id": "CE 607",
+    "name": "Advanced Structural Analysis",
+    "credits": "4",
+    "profs": ["Manish Kumar"]
+  },
+  {
+    "id": "CE 627",
+    "name": "Slopes and Retaining Structures",
+    "credits": "2",
+    "profs": ["Amit Prashant"]
+  },
+  {
+    "id": "CE 611",
+    "name": "Advanced Engineering Hydrology",
+    "credits": "4",
+    "profs": ["Vimal Mishra"]
+  },
+  {
+    "id": "ES 621",
+    "name": "Adv. Solid Mechanics",
+    "credits": "4",
+    "profs": ["Ashwini Kumar"]
+  },
+  {
+    "id": "CE 622",
+    "name": "Structural Dynamics",
+    "credits": "4",
+    "profs": ["Dhiman Basu"]
+  },
+  {
+    "id": "CE 633",
+    "name": "Water Resource Systems: Planning and Management",
+    "credits": "4",
+    "profs": ["Udit Bhatia"]
+  },
+  {
+    "id": "CE 625",
+    "name": "Advanced Hydraulic Engineering",
+    "credits": "4",
+    "profs": ["Pranab Mohapatra"]
+  },
+  {
+    "id": "CL 423",
+    "name": "Chemical Processes",
+    "credits": "4",
+    "profs": ["Subhash Deodhar"]
+  },
+  {
+    "id": "CL 601",
+    "name": "Advance Transport Phenomena",
+    "credits": "4",
+    "profs": ["Pratyush Dayal (I+T)"]
+  },
+  {
+    "id": "CL 604",
+    "name": "Advanced Reaction Engineering",
+    "credits": "4",
+    "profs": ["Chinmay Ghoroi (I+T)"]
+  },
+  {
+    "id": "CS 433",
+    "name": "Computer Networks",
+    "credits": "4",
+    "profs": ["Sameer Kulkarni (I+T)"]
+  },
+  {
+    "id": "CS 610",
+    "name": "Algorithms",
+    "credits": "4",
+    "profs": ["Bireswar Das"]
+  },
+  {
+    "id": "CS 612",
+    "name": "Computer Systems",
+    "credits": "4",
+    "profs": [
+      "Anirban Dasgupta",
+      "Nipun Batra",
+      "Mayank Singh",
+      "Sameer Kulkarni"
+    ]
+  },
+  {
+    "id": "CS 613",
+    "name": "Natural Language Processing",
+    "credits": "4",
+    "profs": ["Mayank Singh"]
+  },
+  {
+    "id": "CS 614",
+    "name": "Advanced Algorithms",
+    "credits": "4",
+    "profs": ["Manoj Gupta"]
+  },
+  {
+    "id": "CS 691-IV",
+    "name": "Special Topics in Computer Science: Advanced Machine Learning\n",
+    "credits": "4",
+    "profs": ["Anirban Dasgupta"]
+  },
+  {
+    "id": "CS 691-II",
+    "name": "Special Topics in Computer Science: Computer Algebra",
+    "credits": "4",
+    "profs": ["Bireswar Das"]
+  },
+  {
+    "id": "CS 691-VI",
+    "name": "Special Topics in Computer Science: Parameterized Algorithms",
+    "credits": "4",
+    "profs": ["Neeldhara Misra"]
+  },
+  {
+    "id": "ES 615 ",
+    "name": "Nature Inspired Computing",
+    "credits": "4",
+    "profs": ["Nithin George"],
+    "type": ["CSE", "Data Analytics"]
+  },
+  {
+    "id": "EE 605",
+    "name": "Digital Image Processing",
+    "credits": "4",
+    "profs": ["Nitin Khanna"]
+  },
+  {
+    "id": "ES 655",
+    "name": "Medical Imaging Systems",
+    "credits": "4",
+    "profs": ["Himanshu Shekhar"]
+  },
+  {
+    "id": "EE 619 ",
+    "name": "Special Electrical Machines",
+    "credits": "4",
+    "profs": ["Ragavan K."]
+  },
+  {
+    "id": "ES 616",
+    "name": "Digital Control Systems",
+    "credits": "4",
+    "profs": ["S Rajendran (I+T)"]
+  },
+  {
+    "id": "EE 617",
+    "name": "VLSI Design",
+    "credits": "4",
+    "profs": ["Joycee Mekie"]
+  },
+  {
+    "id": "EE 691-I",
+    "name": "Special Topics in Electrical Engineering: Computer Graphics",
+    "credits": "4",
+    "profs": ["Shanmuganathan Raman"]
+  },
+  {
+    "id": "ME 605",
+    "name": "Computational Fluid Dynamics",
+    "credits": "4",
+    "profs": ["Dilip Sundaram (I+T)"]
+  },
+  {
+    "id": "ES 607",
+    "name": "Foundations of Fluid Dynamics",
+    "credits": "4",
+    "profs": ["Vinod Narayanan (I+T)"]
+  },
+  {
+    "id": "ME 639",
+    "name": "Introduction to Robotics",
+    "credits": "4",
+    "profs": ["Vineet Vashista"]
+  },
+  {
+    "id": "ME 626",
+    "name": "Industrial Hydraulics and Pneumatics",
+    "credits": "4",
+    "profs": ["N. Ramakrishnan"]
+  },
+  {
+    "id": "ME 691-I",
+    "name": "Special Topics in Mechanical Engineering:\nMechanical Vibration analysis",
+    "credits": "4",
+    "profs": ["Jayaprakash KR"]
+  },
+  {
+    "id": "ME 691-II",
+    "name": "Special Topics in Mechanical Engineering:\nDynamics and Control through household objects",
+    "credits": "4",
+    "profs": ["Harish PM"]
+  },
+  {
+    "id": "ME 691-III",
+    "name": "Special Topics in Mechanical Engineering:\nAdvanced Heat and Mass Transfer",
+    "credits": "4",
+    "profs": ["Jaichandar Swaminathan"]
+  },
+  {
+    "id": "MSE 355",
+    "name": "Surface Engineering",
+    "credits": "4",
+    "profs": ["Sriharita Rowthu"]
+  },
+  {
+    "id": "MSE 403",
+    "name": "Science and Technology of Welding and Joining",
+    "credits": "4",
+    "profs": ["Amit Arora"]
+  },
+  {
+    "id": "MSE 622",
+    "name": "Advance Metal Forming Technology",
+    "credits": "4",
+    "profs": ["Jyoti Mukhopadhyay"]
+  },
+  {
+    "id": "MSE 631",
+    "name": "Thermodynamics of Materials",
+    "credits": "4",
+    "profs": ["Abhay Gautam"]
+  },
+  {
+    "id": "MSE 632 ",
+    "name": "Characterization of Materials",
+    "credits": "4",
+    "profs": ["Emila Panda (I+L)"]
+  },
+  {
+    "id": "CH 506",
+    "name": "Physical organic chemistry",
+    "credits": "4",
+    "profs": ["Sudipta Basu"]
+  },
+  {
+    "id": "CH 510",
+    "name": "Main Group and Transition Metal Chemistry",
+    "credits": "4",
+    "profs": ["Iti Gupta"]
+  },
+  {
+    "id": "CH 511",
+    "name": "Quantum Chemistry",
+    "credits": "4",
+    "profs": ["Sairam Mallajosyula"]
+  },
+  {
+    "id": "CH 513",
+    "name": "Advanced Organic Chemistry",
+    "credits": "4",
+    "profs": ["Sivapriya Kirubakaran"]
+  },
+  {
+    "id": "CH 616",
+    "name": "Applied Chemical Biology",
+    "credits": "4",
+    "profs": ["Sriram Kanvah"]
+  },
+  {
+    "id": "CH 622",
+    "name": "Interpretative organic spectroscopy",
+    "credits": "4",
+    "profs": ["Bhaskar Datta"]
+  },
+  {
+    "id": "CH 626",
+    "name": "Asymmetric Synthesis and Catalysis",
+    "credits": "4",
+    "profs": ["Chandrakumar Appayee"]
+  },
+  {
+    "id": "MA 501",
+    "name": "Basic Algebra",
+    "credits": "4",
+    "profs": ["Indranath Sengupta (I+T)"]
+  },
+  {
+    "id": "MA 504",
+    "name": "Introduction to Linear Algebra",
+    "credits": "4",
+    "profs": ["Akshaa Vatwani (I+T)"]
+  },
+  {
+    "id": "MA 509",
+    "name": "Topics in Real Analysis",
+    "credits": "4",
+    "profs": ["Atul Dixit (I+T)"]
+  },
+  {
+    "id": "MA 510",
+    "name": "Topology",
+    "credits": "4",
+    "profs": ["N. Ladhawala (I+T)"]
+  },
+  {
+    "id": "MA 601",
+    "name": "Mathematical Methods in Engineering",
+    "credits": "4",
+    "profs": [
+      "Satyajijt Pramanik (I)",
+      "Mohan Joshi (Additional Help Sessions)"
+    ]
+  },
+  {
+    "id": "MA 623",
+    "name": "Number Theory",
+    "credits": "4",
+    "profs": ["Fatma Cicek"]
+  },
+  {
+    "id": "MA 626",
+    "name": "Functional Analysis",
+    "credits": "4",
+    "profs": ["Bipul Saurabh"]
+  },
+  {
+    "id": "MA 627",
+    "name": "Algebraic Topology",
+    "credits": "4",
+    "profs": ["Sanjay Amrutiya"]
+  },
+  {
+    "id": "MA 628",
+    "name": "Algebra-II",
+    "credits": "4",
+    "profs": ["Arnab Saha"]
+  },
+  {
+    "id": "MA 630",
+    "name": "Probability Theory",
+    "credits": "4",
+    "profs": ["Chetan Pahalajani"]
+  },
+  {
+    "id": "PH 404",
+    "name": "Molecular and Crystal Physics",
+    "credits": "4",
+    "profs": ["Vijay Thiruvenkatam"]
+  },
+  {
+    "id": "PH 502",
+    "name": "Mathematical Methods of Physics - I",
+    "credits": "4",
+    "profs": ["Prasanna Venkatesh (I+T)"]
+  },
+  {
+    "id": "PH 503",
+    "name": "Quantum Mechanics I",
+    "credits": "4",
+    "profs": ["Bharadwaj Coleppa (I+T)"]
+  },
+  {
+    "id": "PH 505",
+    "name": "Classical Electrodynamics",
+    "credits": "4",
+    "profs": ["Sudipta Sarkar (I+T)"]
+  },
+  {
+    "id": "PH 508 ",
+    "name": "Classical Mechanics",
+    "credits": "4",
+    "profs": ["Vinod  Chandra"]
+  },
+  {
+    "id": "PH 509",
+    "name": "Computational Physics",
+    "credits": "4",
+    "profs": ["Anand Sengupta (I+L)"]
+  },
+  {
+    "id": "PH 510",
+    "name": "Condensed Matter Physics",
+    "credits": "4",
+    "profs": ["Rupak  Banarjee (I+T)"]
+  },
+  {
+    "id": "PH 605",
+    "name": "Topics in Classical Mechanics and Electrodynamics",
+    "credits": "4",
+    "profs": ["RR Puri"]
+  },
+  {
+    "id": "PH 608",
+    "name": "Tools of Theoretical Physics",
+    "credits": "4",
+    "profs": ["RR Puri"]
+  },
+  {
+    "id": "PH 610",
+    "name": "Quantum Field Theory I",
+    "credits": "4",
+    "profs": ["Arpan  Bhatacharyya"]
+  },
+  {
+    "id": "PH 644",
+    "name": "Tools of experimental Physics",
+    "credits": "4",
+    "profs": ["Gopinadhan Kalon"]
+  },
+  {
+    "id": "PH 692",
+    "name": "Special Topics in Physics: Ultrafast Optics",
+    "credits": "2",
+    "profs": ["Ramon Carriles"]
+  },
+  {
+    "id": "EH 601",
+    "name": "Earth Surface Processes in the Anthropocene",
+    "credits": "4",
+    "profs": ["Saptarshi Dey (I+L)"]
+  },
+  {
+    "id": "EH 605",
+    "name": "Modeling of Earth System and Sustainability",
+    "credits": "4",
+    "profs": ["R N Singh"]
+  },
+  {
+    "id": "EH 610",
+    "name": "Engineering Seismology and Seismic Hazard Analysis",
+    "credits": "4",
+    "profs": ["Sanjay Singh Bora"]
+  },
+  {
+    "id": "ES 635",
+    "name": "Water Quality Engineering",
+    "credits": "4",
+    "profs": ["Manish Kumar Singh"]
+  },
+  {
+    "id": "CG 513",
+    "name": "Behavioral Economics",
+    "credits": "4",
+    "profs": ["Krishna Miyapuram"],
+    "type": ["Cognitive Science", "HSS", "Management"]
+  },
+  {
+    "id": "CG 591",
+    "name": "Special Topics in Cognitive Science: Introduction to Cognitive Neuropsychology",
+    "credits": "4",
+    "profs": ["Setu Havanur"],
+    "type": ["Basic Science", "Cognitive Science"]
+  },
+  {
+    "id": "CG 606",
+    "name": "Philosophy of Mind",
+    "credits": "4",
+    "profs": ["Jaison Manjaly"],
+    "type": ["Cognitive Science", "HSS"]
+  },
+  {
+    "id": "CG 502",
+    "name": "Foundations of Cognitive Science",
+    "credits": "2",
+    "profs": ["Krishna Miyapuram (coordination)"],
+    "type": ["Cognitive Science"]
+  },
+  {
+    "id": "CG 691-I",
+    "name": "Special Topics in Cognitive Science: Neuroplasticity",
+    "credits": "4",
+    "profs": ["Leslee Lazar"],
+    "type": ["Basic Science", "Cognitive Science"]
+  },
+  {
+    "id": "CG 591-I",
+    "name": "Special Topics in Cognitive Science: Introduction to Cognitive Linguistics",
+    "credits": "4",
+    "profs": ["Jooyoung Kim"],
+    "type": ["Cognitive Science", "HSS"]
+  },
+  {
+    "id": "DES 201",
+    "name": "From Idea to Marketable Product",
+    "credits": "4",
+    "profs": ["Manasi Kanetkar "]
+  },
+  {
+    "id": "ES 411",
+    "name": "Topics in Complexity Science",
+    "credits": "4",
+    "profs": ["Antonio Fonseca"]
+  },
+  {
+    "id": "FP 602 ",
+    "name": "Writing",
+    "credits": "4",
+    "profs": [
+      "Sharmita Lahiri (I+T)",
+      "Jooyoung Kim (T)",
+      "Dyotana Banerjee (T)",
+      "Sudipta Basu (T)"
+    ]
+  },
+  {
+    "id": "HS 104(R)",
+    "name": "Foundational Sanskrit",
+    "credits": "4",
+    "profs": ["Mana Shah (I+T)"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 108",
+    "name": "Japan Studies",
+    "credits": "2",
+    "profs": ["Shungo Kawanishi"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 111 ",
+    "name": "Urdu Script & Poetry",
+    "credits": "4",
+    "profs": ["Mohd. Mubashshir Ahsan (I+T)"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 112 ",
+    "name": "Urdu Poetry Interpretation",
+    "credits": "4",
+    "profs": ["Mohd. Mubashshir Ahsan (I+T)"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 211",
+    "name": "Exploring India\u2019s Scientific and Technological Heritage",
+    "credits": "4",
+    "profs": ["Michel Danino"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 223 ",
+    "name": "Sanskrit Literature",
+    "credits": "4",
+    "profs": ["Mana Shah (I+T)"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 305 ",
+    "name": "Perspectives in Psychology",
+    "credits": "4",
+    "profs": ["Meera Sunny"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 391",
+    "name": "Special Topics in HSS: Music Traditions of India",
+    "credits": "4",
+    "profs": ["Srinivas Reddy"]
+  },
+  {
+    "id": "HS 313 ",
+    "name": "When You Cannot Experiment: Social Science Methods",
+    "credits": "4",
+    "profs": ["Malavika Subramanyam"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 411 ",
+    "name": "Economic Concepts and Issues in Project Analysis",
+    "credits": "2",
+    "profs": ["A. Ramanathan"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 425 ",
+    "name": "Introduction to Archaeology",
+    "credits": "4",
+    "profs": ["Sharada Channarayapatna"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 491-I",
+    "name": "Special Topics in HSS: Indian philosophy through the ages",
+    "credits": "4",
+    "profs": ["S\u00e9raphia Heitmann"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 491-II",
+    "name": "Special Topics in HSS: The \u2018engineering\u2019 of theatre-making",
+    "credits": "4",
+    "profs": ["Arnab Banerji"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 491-III",
+    "name": "Special Topics in HSS: Storytelling for the Digital Era",
+    "credits": "4",
+    "profs": ["Arnapurna Rath"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 507 ",
+    "name": "Humanism, Anti-Humanism, and Posthumanism",
+    "credits": "4",
+    "profs": ["Angus McBlane"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 510 ",
+    "name": "Perspectives on Indian Civilization",
+    "credits": "4",
+    "profs": ["Michel Danino"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 512",
+    "name": "Political Thought",
+    "credits": "4",
+    "profs": ["Dyotana Banerjee"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 515 ",
+    "name": "The Politics of the Environment",
+    "credits": "4",
+    "profs": ["Ambika Aiyadurai"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 518 ",
+    "name": "Philosophy, Cognition and Psychoanalysis",
+    "credits": "4",
+    "profs": ["Arka Chattopadhyay"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 519 ",
+    "name": "Linguistic Anthropology",
+    "credits": "4",
+    "profs": ["Nishaant Choksi"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 610",
+    "name": "A Critical Journey Through Select Thoughts and Theories",
+    "credits": "4",
+    "profs": ["Arnapurna Rath"]
+  },
+  {
+    "id": "HS 645 ",
+    "name": "History of India, 1930-1964",
+    "credits": "4",
+    "profs": ["Madhumita Sengupta"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 691-I",
+    "name": "Special Topics in HSS: Themes in Postcolonialism",
+    "credits": "4",
+    "profs": ["Madhumita Sengupta"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 691-II",
+    "name": "Special topics in HSS: Applied statistics: Multilevel modeling",
+    "credits": "4",
+    "profs": ["Malavika Subramanyam"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "IN 304 ",
+    "name": "Ancient Indian Technology",
+    "credits": "4",
+    "profs": ["Alok Kumar Kanungo (I+T)"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "MS 304",
+    "name": "Organizational Behaviour & Human Resource Management (OB & HRM)",
+    "credits": "4",
+    "profs": ["Sumeet Varghese"],
+    "type": ["Management"]
+  },
+  {
+    "id": "MS 403",
+    "name": "Engineering Entrepreneurship",
+    "credits": "4",
+    "profs": ["Raj Jaswa"],
+    "type": ["Management"]
+  },
+  {
+    "id": "MS 491",
+    "name": "Special topics in Management: Marketing Analytics",
+    "credits": "4",
+    "profs": ["Marcos Severo"],
+    "type": ["Management"]
+  },
+  {
+    "id": "HS 491-IV",
+    "name": "Special Topics in HSS: Owning your Narrative",
+    "credits": "4",
+    "profs": ["Brian Brophy"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 491-V",
+    "name": "Special Topics in HSS: Social Health Engineering (Half Sem course, 2nd Half)",
+    "credits": "2",
+    "profs": ["Saravanan Subramnain"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 691-III",
+    "name": "Special Topics in HSS: Abnormal Psychology",
+    "credits": "4",
+    "profs": ["Fred Coolidge"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "HS 327 (H)",
+    "name": "Anthropology, Citizenship and Human Rights (Half Sem course, 2nd Half)",
+    "credits": "2",
+    "profs": ["Rosa Perez"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "MS 492",
+    "name": "Special Topics in Management: Finance Management (2 credit course that will run for entire semester, ~2 hours each week)",
+    "credits": "2",
+    "profs": ["Rajiv Bhatt"],
+    "type": ["HSS"]
+  },
+  {
+    "id": "MS 491-I",
+    "name": "Special Topics in Management: Product Management",
+    "credits": "4",
+    "profs": ["Rajiv Joshi"],
+    "type": ["HSS"]
+  }
+]

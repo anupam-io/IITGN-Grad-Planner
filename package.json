@@ -9,7 +9,7 @@
     "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node index.js",
-    "d": "node setDefaultCourses.js"
+    "s": "node setAllCourses.js"
   },
   "keywords": [],
   "author": "",
