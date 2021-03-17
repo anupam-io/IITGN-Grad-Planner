@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
-const Courses = mongoose.model('courses');
+const DefaultSem = mongoose.model('defsem');
 
 module.exports = (app) => {
-  // use http://localhost:5000/api/status to get the status of server
-  app.get(`/api/status`, async (req, res) => {
-    return res.status(200).send([{"status": "OK"}]);
+  // use http://localhost:5000/defsem
+  app.get(`/defsem`, async (req, res) => {
+    console.log("Client detected.");
+    let data = await DefaultSem.find({});
+    return res.status(200).send(data);
   });
 
   // app.get(`/api/product`, async (req, res) => {

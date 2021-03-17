@@ -5,7 +5,6 @@ var cors = require('cors');
 // import all schemas
 require('./models/importAllModels');
 
-
 const app = express();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/test-database`, {
@@ -23,6 +22,7 @@ app.use(cors()) // Use this after the variable declaration
 
 //IMPORT ROUTES
 require('./routes/coursesRoutes')(app);
+require('./routes/defaultSemData')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

@@ -2,9 +2,14 @@ const mongoose = require('mongoose');
 const Courses = mongoose.model('courses');
 
 module.exports = (app) => {
-  // use http://localhost:5000/api/status to get the status of server
-  app.get(`/api/status`, async (req, res) => {
-    return res.status(200).send([{"status": "OK"}]);
+  // use http://localhost:5000/course/find/:id
+  app.get(`/course/find/:id`, async (req, res) => {
+    const {id} = req.params;
+    console.log("find() query for: ", id);
+    ret =  await Courses.find({
+      id: id
+    });
+    return res.status(200).send(ret);
   });
 
   // app.get(`/api/product`, async (req, res) => {
