@@ -9,7 +9,9 @@
     "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node index.js",
-    "s": "node setAllCourses.js"
+    "c": "node setAllCourses.js",
+    "s": "node setDefaultSem.js"
+
   },
   "keywords": [],
   "author": "",

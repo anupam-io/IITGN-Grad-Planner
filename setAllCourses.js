@@ -27,8 +27,6 @@ async function main() {
     // Resetting the document
     await courses.deleteMany({});
 
-    s = new Set();
-
     // Inserting from sem1
     data = require("./initData/sem1.json");
     for (i = 0; i < data.length; i++) {
@@ -42,7 +40,6 @@ async function main() {
             .catch(e => {
                 console.log("Duplicated detected for: " + data[i].id);
             });
-        s.add(data[i].id);
     }
     console.log(data.length + " courses added successfully.");
     // Inserting from sem2
@@ -58,7 +55,6 @@ async function main() {
             .catch(e => {
                 console.log("Duplicated detected for: " + data[i].id);
             });
-        s.add(data[i].id);
     }
     console.log(data.length + " courses added successfully.");
 
