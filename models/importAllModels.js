@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const courseSchema = require('./../schemas/Course');
+const {
+    coursesSchema
+} = require("./../schemas/Course");
 // Import and create all schemas in a similar way
 
-mongoose.model('courses', courseSchema);
+mongoose.model('courses', coursesSchema);
