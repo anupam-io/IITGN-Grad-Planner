@@ -18,6 +18,7 @@ mongoose.connect(
 const {
     coursesSchema
 } = require("./schemas/Course");
+
 // The main schema object which we will use to query
 const courses = mongoose.model("courses", coursesSchema);
 

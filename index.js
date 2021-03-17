@@ -2,12 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 var cors = require('cors');
 
-// IMPORT MODELS
-// require('./models/Product');
+// import all schemas
+require('./models/importAllModels');
 
 
 const app = express();
-
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/test-database`, {
     useNewUrlParser: true,
@@ -20,7 +19,6 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors()) // Use this after the variable declaration
-
 
 
 //IMPORT ROUTES
