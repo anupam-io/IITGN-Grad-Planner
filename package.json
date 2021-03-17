@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm run start --prefix client",
+    "client": "yarn start --prefix client",
     "server": "nodemon index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node index.js",
-    "d": "node setDefaultCourses.js"
+    "c": "node setAllCourses.js",
+    "s": "node setDefaultSem.js"
+
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,41 @@
+// Connecting mongoose to MongoDB
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+
+let localMongo = `mongodb://localhost:27017/test-database`;
+let onlineMongo = `mongodb+srv://test:test@hackrush-2021.ojnjz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
+mongoose.connect(
+    localMongo, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true,
+    }
+);
+
+// Importing schema for default courses
+const {
+    defaultSemSchema
+} = require("./schemas/defaultSem");
+
+// The main schema object which we will use to query
+const defaultSem = mongoose.model("defsem", defaultSemSchema);
+
+// Adding and deleting
+async function main() {
+    // Resetting the document
+    await defaultSem.deleteMany({});
+
+    const data = require("./initData/defaultSem.json");
+    for(i=0; i<data.length; i++){
+        await defaultSem.create({
+            sem: data[i].sem,
+            courses: data[i].courses
+        });
+    }
+
+    // Exiting...
+    return process.exit(0);
+}
+main().catch((er) => console.log(er));
