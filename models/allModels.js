@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const {
     coursesSchema
-} = require("./../schemas/Course");
+} = require("../schemas/Course");
 const {
     defaultSemSchema
-} = require("./../schemas/defaultSem");
+} = require("../schemas/defaultSem");
 
 
 mongoose.model('courses', coursesSchema);

@@ -45,4 +45,10 @@
  - sudo service mongod status
  - sudo service mongod stop
  - sudo service mongod restart
- - sudo kill -9 $(sudo lsof -t -i:5000)
+
+## Stopping previous servers
+### Ubuntu
+ - `sudo kill -9 $(sudo lsof -t -i:5000)`
+### Windows
+ - `netstat -ano | findstr :<PORT>`
+ - `taskkill /PID <PID> /F`

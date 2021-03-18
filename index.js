@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var cors = require('cors');
 
 // import all schemas
-require('./models/importAllModels');
+require('./models/allModels');
 
 const app = express();
 mongoose.Promise = global.Promise;
