@@ -3,21 +3,20 @@ import { EditableText, EditableNumber } from "react-editables";
 import { DropdownButton, Dropdown, ButtonGroup } from "react-bootstrap";
 
 function SingleCourse(props) {
-  useEffect(() => {
-
-  });
+  // useEffect(() => {
+  // });
 
   const changeName = (val) => {
-    props.updateMainData("name", props.sem, props.index, val);
+    props.updateMainData(0, props.sem, props.index, val);
   };
   const changeId = (val) => {
-    props.updateMainData("id", props.sem, props.index, val);
+    props.updateMainData(1, props.sem, props.index, val);
   };
   const changeCredit = (val) => {
-    props.updateMainData("credits", props.sem, props.index, val);
+    props.updateMainData(2, props.sem, props.index, val);
   };
   const changeType = (val) => {
-    props.updateMainData("type", props.sem, props.index, val);
+    props.updateMainData(3, props.sem, props.index, val);
   };
   
 
@@ -42,6 +41,7 @@ function SingleCourse(props) {
             onChange={changeCredit}
             placeholder="Credits"
           />
+
 
           <DropdownButton
             className="my-2"

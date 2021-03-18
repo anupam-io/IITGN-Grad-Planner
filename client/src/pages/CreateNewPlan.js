@@ -20,22 +20,20 @@ class CreateNewPlan extends Component {
     this.loadDeafaultSem();
   }
 
-  updateMainData(attr, sem, course, val) {
-    console.log("New courseId: ", val);
-    // let temp = this.state.mainData;
+  updateMainData = (attr, sem, course, val) => {
+    console.log("updateMainData() called on: ", val);
+    let temp = this.state.mainData;
+    temp[sem][course][attr] = val;
 
-    // console.log();
-
-    // temp[sem].courses.course.attr = val;
-    // this.setState({
-    //   mainData: temp,
-    // });
-  }
+    this.setState({
+      mainData: temp,
+    });
+  };
 
   addCourse = (sem) => {
     console.log("addCourse() called on: ", sem);
     let temp = this.state.mainData;
-    temp[sem].courses.push("Dummy 101");
+    temp[sem].push(["", "", 4, "Other"]);
 
     this.setState({
       mainData: temp,
@@ -47,10 +45,6 @@ class CreateNewPlan extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }} className="App p-0">
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
         <div className="jumbotron">
           <div className="display-1">Modern Graduation Planner</div>
           <h3 className="lead">You graduation in your hands</h3>
@@ -60,8 +54,8 @@ class CreateNewPlan extends Component {
           return (
             <div className="my-4" key={index}>
               <Semester
-                number={index + 1}
-                data={value.courses}
+                number={index}
+                data={value}
                 updateMainData={this.updateMainData}
                 addCourse={this.addCourse}
               />

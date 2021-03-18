@@ -8,7 +8,7 @@ function Semester(props) {
   });
 
   const addCourse = () => {
-    props.addCourse(props.number - 1);
+    props.addCourse(props.number);
   };
 
   return (
@@ -16,7 +16,7 @@ function Semester(props) {
       className="m-0 py-4"
       style={{ backgroundColor: "#F5D7E3", borderRadius: "5px" }}
     >
-      <h2>Semester {props.number}</h2>
+      <h2>Semester {props.number+1}</h2>
 
       <div className="row">
         <div className="col-1" style={{ margin: "auto" }}>
@@ -27,10 +27,10 @@ function Semester(props) {
           {props.data.map((value, index) => {
             return (
               <SingleCourse
-                name={value.name}
-                id={value.id}
-                credits={value.credits}
-                type={value.type}
+                id={value[0]}
+                name={value[1]}
+                credits={value[2]}
+                type={value[3]}
                 updateMainData={props.updateMainData}
                 key={index}
                 sem={props.number}
