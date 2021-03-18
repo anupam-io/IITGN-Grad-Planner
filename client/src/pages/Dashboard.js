@@ -1,30 +1,19 @@
 
 import React from 'react';
-import {Container, Button} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import {Link, MemoryRouter, Route, Switch} from 'react-router-dom';
+import {Container, Button, Form} from 'react-bootstrap';
 
 import PlanCard from '../components/PlanCard';
-import CreateNewPlan from './CreateNewPlan';
+import history from '../history';
 
 function Dashboard({allPlans})
 {
-
     return (
         <div>
             <Container>
                 <h4>Add new plan</h4>
-                {/* <MemoryRouter>
-                    <LinkContainer>
-                    <Button></Button>
-                    </LinkContainer>
-                    <Switch>
-                        <Route path="/create-new-plan">
-                            <CreateNewPlan />
-                        </Route>
-                    </Switch>
-                </MemoryRouter> */}
-                <Link to="/create-new-plan" className="btn btn-primary">Add</Link>
+                <Form>
+                    <Button variant="primary" onClick={() => history.push('/create-new-plan')}>Add new plan</Button>
+                </Form>
             </Container>
 
             <Container>
