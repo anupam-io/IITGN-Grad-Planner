@@ -25,12 +25,11 @@ function Semester(props) {
 
         <div className="row col-10">
           {props.data.map((value, index) => {
-            console.log(index);
             return (
               <SingleCourse
-                name={"My HS Course"}
-                id={value}
-                credits={"4"}
+                name={value.name}
+                id={value.id}
+                credits={value.credits}
                 updateMainData={props.updateMainData}
                 key={index}
                 sem={props.number}

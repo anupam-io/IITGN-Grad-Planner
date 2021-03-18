@@ -31,9 +31,9 @@ module.exports = (app) => {
         if (query!=null){
           temp.push(
             {
-              "courseCode": query["id"],
-              "courseName": query["name"],
-              "courseCredits": query["credits"]
+              "id": query["id"],
+              "name": query["name"],
+              "credits": query["credits"]
             }
           )
         }
