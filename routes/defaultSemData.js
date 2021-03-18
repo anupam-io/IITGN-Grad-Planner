@@ -13,20 +13,31 @@ module.exports = (app) => {
     Courses.find();
 
     var semester = 1;
+    // console.log(data.length);
     for(i=0;i<data.length;i++){
       console.log(data[i]);
       
 
       temp = [];
+      // console.log(data[i].sem);
 
       for (j=0;j<data[i].courses.length;j+=1)
       {
-        const query = Courses.findOne({'id': data[i].courses[j]})
-        temp.push(
-          {
-            query
-          }
-        )
+        
+        const query = await Courses.findOne({'id': data[i].courses[j]});
+        // console.log("querying...")
+        // console.log(query);
+        
+        if (query!=null){
+          temp.push(
+            {
+              "courseCode": query["id"],
+              "courseName": query["name"],
+              "courseCredits": query["credits"]
+            }
+          )
+        }
+        
       }
       
       bigObject.push(
@@ -43,8 +54,8 @@ module.exports = (app) => {
     // id, name, credits
 
 
-    console.log(bigObject);
-    return res.status(200).send(["hello, world"]);
+    // console.log(bigObject);
+    return res.status(200).send(bigObject);
   });
 
   // app.get(`/api/product`, async (req, res) => {
