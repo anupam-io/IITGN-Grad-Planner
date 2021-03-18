@@ -7,13 +7,14 @@ function SingleCourse(props) {
   const [credit, setCredit] = useState(null);
 
   useEffect(() => {
-    // Contructor
+    
   });
 
   const changeName = (val) => {
-    props.updateMainData("name", props.sem, props.key, val);
   };
-  const changeId = (val) => {};
+  const changeId = (val) => {
+    props.updateMainData("name", props.sem, props.sem, val);
+  };
   const changeCredit = (val) => {};
 
   return (
