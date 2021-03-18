@@ -1,24 +1,21 @@
-
 import React, { useState, useEffect, Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import Semester from "../components/Semester";
-
-
-
+import { Button, Col, Row } from "react-bootstrap";
 
 class CreateNewPlan extends Component {
-  loadDeafaultSem = async()=>{
+  loadDeafaultSem = async () => {
     let res = await axios.get(`/defsem`);
     this.setState({
-      mainData: res.data
+      mainData: res.data,
     });
     return res;
-  }
+  };
   constructor() {
     super();
     this.state = {
-      mainData: []
+      mainData: [],
     };
     this.loadDeafaultSem();
   }
@@ -34,15 +31,15 @@ class CreateNewPlan extends Component {
     console.log("addCourse() called on: ", sem);
     let temp = this.state.mainData;
     temp[sem].courses.push("Dummy 101");
-    
+
     this.setState({
-      mainData: temp
+      mainData: temp,
     });
   };
 
   render() {
     return (
-      <div style={{textAlign: "center"}} className="App p-3">
+      <div style={{ textAlign: "center" }} className="App p-0">
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -64,6 +61,24 @@ class CreateNewPlan extends Component {
             </div>
           );
         })}
+
+        <Row className="p-2">
+          <Col>
+            <Button>Check total credits</Button>
+          </Col>
+        </Row>
+
+        <Row className="p-2">
+          <Col>
+            <Button>Check total credit features</Button>
+          </Col>
+        </Row>
+
+        <Row className="p-2">
+          <Col>
+            <Button>Check total credit features</Button>
+          </Col>
+        </Row>
       </div>
     );
   }

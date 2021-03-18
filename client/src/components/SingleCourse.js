@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { EditableText, EditableNumber } from "react-editables";
+import { Dropdown } from "semantic-ui-react";
 
 function SingleCourse(props) {
-  const [name, setName] = useState(null);
-  const [id, setId] = useState(null);
-  const [credit, setCredit] = useState(null);
-
   useEffect(() => {
     
   });
@@ -36,6 +33,10 @@ function SingleCourse(props) {
             onChange={changeCredit}
             placeholder="Credits"
           />
+          
+          <Dropdown>
+            
+          </Dropdown>
         </div>
       </div>
     </div>

@@ -48,7 +48,7 @@
 
 ## Stopping previous servers
 ### Ubuntu
- - `sudo kill -9 $(sudo lsof -t -i:5000)`
+ - `i`
 ### Windows
  - `netstat -ano | findstr :<PORT>`
  - `taskkill /PID <PID> /F`

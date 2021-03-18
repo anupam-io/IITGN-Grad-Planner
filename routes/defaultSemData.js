@@ -37,7 +37,6 @@ module.exports = (app) => {
             }
           )
         }
-        
       }
       
       bigObject.push(
@@ -47,6 +46,18 @@ module.exports = (app) => {
         }
       )
     }
+    bigObject.push(
+      {
+        "sem": "7",
+        "courses": []
+      }
+    )
+    bigObject.push(
+      {
+        "sem": "8",
+        "courses": []
+      }
+    )
 
     // read name of courses
     // search in our database
