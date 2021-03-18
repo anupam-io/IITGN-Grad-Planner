@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SingleCourse from "./SingleCourse";
 
-var hello = [1, 2, 3, 4, 5, 6];
-
 function Semester(props) {
   useEffect(() => {
     // Contructor
-    });
+  });
 
   return (
     <div
@@ -19,12 +17,14 @@ function Semester(props) {
         512
       </div>
       <div className="row col-10">
-        {hello.map((number, index) => {
+        {props.data.map((number, index) => {
           return (
             <SingleCourse
-              name="Design courses for engineers"
-              id="DES 89"
-              credits={number}
+              name={props.data[index].name}
+              id={props.data[index].name}
+              credits={props.data[index].name}
+              updateMainData={props.updateMainData}
+              key={number}
             />
           );
         })}

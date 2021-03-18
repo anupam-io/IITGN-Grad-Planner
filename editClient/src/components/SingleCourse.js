@@ -6,11 +6,15 @@ function SingleCourse(props) {
   const [id, setId] = useState(null);
   const [credit, setCredit] = useState(null);
 
-
-
   useEffect(() => {
     // Contructor
-    });
+  });
+
+  const changeName = (val) => {
+    props.updateMainData("name", props.sem, props.key, val);
+  };
+  const changeId = (val) => {};
+  const changeCredit = (val) => {};
 
   return (
     <div className="col-3">
@@ -18,22 +22,22 @@ function SingleCourse(props) {
         <div className="card-body">
           <EditableText
             value={props.name}
-            onChange={setName}
-            placeholder="Name"     
-            />
+            onChange={changeName}
+            placeholder="Name"
+          />
           <EditableText
             value={props.id}
-            onChange={setId}
+            onChange={changeId}
             placeholder="Course ID"
-            />
+          />
           <EditableNumber
             value={props.credits}
-            onChange={setCredit}
+            onChange={changeCredit}
             placeholder="Credits"
-            />
+          />
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
