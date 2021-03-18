@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Courses = mongoose.model('courses');
+const DefaultSem = mongoose.model("defsem");
 
 module.exports = (app) => {
   // use http://localhost:5000/course/find/:id
@@ -11,6 +12,53 @@ module.exports = (app) => {
     });
     return res.status(200).send(ret);
   });
+
+  app.get(`/defsem`, async (req, res) => {
+    console.log("defsem request.");
+    let data = await DefaultSem.find({});
+    bigObject = [];
+    
+    for (i = 0; i < data.length; i++) {
+      // console.log(data[i]);
+      temp = [];
+
+      for (j = 0; j < data[i].courses.length; j += 1) {
+        const query = await Courses.findOne({ id: data[i].courses[j] });
+        // console.log("querying...")
+        // console.log(query);
+        if (query != null) {
+          temp.push({
+            id: query["id"],
+            name: query["name"],
+            credits: query["credits"],
+            type: "Other"
+          });
+        }
+      }
+      bigObject.push({
+        sem: data[i].sem,
+        courses: temp,
+      });
+    }
+    bigObject.push({
+      sem: "7",
+      courses: [],
+      
+    });
+    bigObject.push({
+      sem: "8",
+      courses: [],
+    });
+
+    // read name of courses
+    // search in our database
+    // create new bigger object with more data
+    // id, name, credits
+
+    // console.log(bigObject);
+    return res.status(200).send(bigObject);
+  });
+
 
   // app.get(`/api/product`, async (req, res) => {
   //   let products = await Product.find();

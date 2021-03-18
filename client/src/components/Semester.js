@@ -30,9 +30,11 @@ function Semester(props) {
                 name={value.name}
                 id={value.id}
                 credits={value.credits}
+                type={value.type}
                 updateMainData={props.updateMainData}
                 key={index}
                 sem={props.number}
+                index={index}
               />
             );
           })}

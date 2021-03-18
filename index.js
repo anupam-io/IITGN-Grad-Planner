@@ -21,8 +21,7 @@ app.use(cors()) // Use this after the variable declaration
 
 
 //IMPORT ROUTES
-require('./routes/coursesRoutes')(app);
-require('./routes/defaultSemData')(app);
+require('./routes/routes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

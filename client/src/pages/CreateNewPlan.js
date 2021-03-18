@@ -22,9 +22,14 @@ class CreateNewPlan extends Component {
 
   updateMainData(attr, sem, course, val) {
     console.log("New courseId: ", val);
-    // this.setState( state => update(state, {array: {$push: [4]}}) );
+    // let temp = this.state.mainData;
 
-    // mainData[sem].courses[attr] = val;
+    // console.log();
+
+    // temp[sem].courses.course.attr = val;
+    // this.setState({
+    //   mainData: temp,
+    // });
   }
 
   addCourse = (sem) => {
@@ -36,6 +41,8 @@ class CreateNewPlan extends Component {
       mainData: temp,
     });
   };
+
+  saveMyPlan = async () => {};
 
   render() {
     return (
@@ -64,19 +71,25 @@ class CreateNewPlan extends Component {
 
         <Row className="p-2">
           <Col>
-            <Button>Check total credits</Button>
+            <Button variant="warning">Check total credits</Button>
           </Col>
         </Row>
 
         <Row className="p-2">
           <Col>
-            <Button>Check total credit features</Button>
+            <Button variant="warning">Check total credit features</Button>
           </Col>
         </Row>
 
         <Row className="p-2">
           <Col>
-            <Button>Check total credit features</Button>
+            <Button variant="warning">Check total credit features</Button>
+          </Col>
+        </Row>
+
+        <Row className="p-2">
+          <Col>
+            <Button>Save my plan</Button>
           </Col>
         </Row>
       </div>
