@@ -6,7 +6,10 @@ const {
 const {
     defaultSemSchema
 } = require("../schemas/defaultSem");
-
+const {
+    planSchema
+} = require("../schemas/Plans");
 
 mongoose.model('courses', coursesSchema);
 mongoose.model('defsem', defaultSemSchema);
+mongoose.model('plans', planSchema);

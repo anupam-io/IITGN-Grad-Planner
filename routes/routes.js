@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Courses = mongoose.model("courses");
 const DefaultSem = mongoose.model("defsem");
+const Plans = mongoose.model("plans");
 
 module.exports = (app) => {
   // use http://localhost:5000/course/find/:id
@@ -30,59 +31,47 @@ module.exports = (app) => {
     }
     bigObject.push([]);
     bigObject.push([]);
-
-    // read name of courses
-    // search in our database
-    // create new bigger object with more data
-    // id, name, credits
-
-    // console.log(bigObject);
     return res.status(200).send(bigObject);
   });
 
-  // app.get(`/api/product`, async (req, res) => {
-  //   let products = await Product.find();
-  //   return res.status(200).send(products);
-  // });
+  app.post(`/savePlan`, async (req, res) => {
+    console.log("savePlan request.");
+    
+    console.log(req.body.name);
+    console.log(req.body.data);
 
-  // app.post(`/api/product/add`, async (req, res) => {
-  //   let product = await Product.create(req.body);
-  //   return res.status(201).send({
-  //     error: false,
-  //     product
-  //   })
-  // })
+    Plans.create({
+      name: req.body.name,
+      data: req.body.data,
+    });
+    
+    console.log("Saved.");
+    
+    return res.status(200).send({
+      error: false,
+      status: "Saved",
+    });
+  });
 
-  // app.put(`/api/product/:id`, async (req, res) => {
-  //   const {id} = req.params;
-
-  //   let product = await Product.findByIdAndUpdate(id, req.body);
-
-  //   return res.status(202).send({
-  //     error: false,
-  //     product
-  //   })
-
-  // });
-
-  // app.delete(`/api/product/:id`, async (req, res) => {
-  //   const {id} = req.params;
-
-  //   let product = await Product.findByIdAndDelete(id);
-
-  //   return res.status(202).send({
-  //     error: false,
-  //     product
-  //   })
-
-  // });
-
-  // app.post(`/api/product/remove`, async(req, res)=>{
-  //   let l = await Product.remove({name: req.body.name})
-  //   console.log(req.body.name);
-  //   return res.status(202).send({
-  //     error: false,
-  //     l
-  //   });
-  // });
+  app.post(`/findPlanByName`, async (req, res) => {
+    console.log("findPlanByName request.");
+    console.log(req.body.name);
+    
+    let ret = await Plans.findOne({
+      name: req.body.name,
+    });
+    
+    if (ret == null) {
+      console.log("Not found.");
+      return res.status(200).send({
+        status: false,
+      });
+    } else {
+      console.log("found", ret.data);
+      return res.status(200).send({
+        status: true,
+        data: ret.data,
+      });
+    }
+  });
 };

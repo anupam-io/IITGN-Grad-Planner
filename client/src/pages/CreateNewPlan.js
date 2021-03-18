@@ -2,7 +2,10 @@ import React, { useState, useEffect, Component } from "react";
 import axios from "axios";
 
 import Semester from "../components/Semester";
-import { Button, Col, Row } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
+import saveMyPlan from "./../services/saveMyPlan";
+import loadMyPlan from "./../services/loadMyPlan";
+import { Input } from "semantic-ui-react";
 
 class CreateNewPlan extends Component {
   loadDeafaultSem = async () => {
@@ -16,6 +19,7 @@ class CreateNewPlan extends Component {
     super();
     this.state = {
       mainData: [],
+      term: "",
     };
     this.loadDeafaultSem();
   }
@@ -27,6 +31,7 @@ class CreateNewPlan extends Component {
 
     this.setState({
       mainData: temp,
+      term: "",
     });
   };
 
@@ -40,7 +45,28 @@ class CreateNewPlan extends Component {
     });
   };
 
-  saveMyPlan = async () => {};
+  saveMyPlan = async (e) => {
+    e.preventDefault();
+    console.log("Saving as: ", this.state.term);
+    await saveMyPlan(this.state.term, this.state.mainData);
+  };
+
+  loadMyPlan = async (e) => {
+    e.preventDefault();
+    console.log("Loading plan: ", this.state.term);
+    let res = await loadMyPlan(this.state.term);
+    if(res.data.status){
+      this.setState({
+        mainData: res.data.data
+      });
+    }
+  };
+
+  setTerm = (e) => {
+    this.setState({
+      term: e,
+    });
+  };
 
   render() {
     return (
@@ -83,7 +109,33 @@ class CreateNewPlan extends Component {
 
         <Row className="p-2">
           <Col>
-            <Button>Save my plan</Button>
+            <Form onSubmit={this.saveMyPlan}>
+              <Form.Group
+                onChange={(e) => this.setTerm(e.target.value)}
+                as={Col}
+                controlId="formGridZip"
+              >
+                <Form.Control />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Save Plan
+              </Button>
+            </Form>
+          </Col>
+          <Col>
+            <Form onSubmit={this.loadMyPlan}>
+              <Form.Group
+                onChange={(e) => this.setTerm(e.target.value)}
+                as={Col}
+                controlId="formGridZip"
+              >
+                <Form.Control />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Load Plan
+              </Button>
+            </Form>
           </Col>
         </Row>
       </div>
