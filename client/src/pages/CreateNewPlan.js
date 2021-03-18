@@ -79,7 +79,7 @@ class CreateNewPlan extends Component {
 
   render() {
     return (
-      <div className="App p-3">
+      <div style={{textAlign: "center"}} className="App p-3">
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
