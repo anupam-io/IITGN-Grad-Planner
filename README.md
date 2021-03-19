@@ -48,7 +48,7 @@
  - `sudo service mongod restart`
 ### Stopping stucked servers
 #### Linux
- - `sudo fuser -k 8000/tcp`
+ - `sudo fuser -k 5000/tcp`
 #### Windows
- - `netstat -ano | findstr :<PORT>`
- - `taskkill /PID <PID> /F`
+ - `netstat -ano | findstr :5000`
+ - `taskkill /PID 5000 /F`

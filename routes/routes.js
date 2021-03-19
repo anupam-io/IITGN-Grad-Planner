@@ -4,9 +4,8 @@ const DefaultSem = mongoose.model("defsem");
 const Plans = mongoose.model("plans");
 
 module.exports = (app) => {
-  // use http://localhost:5000/course/find/:id
   app.get(`/status`, async (req, res) => {
-    return res.status(200).send({"status": "OK"});
+    return res.status(200).send({ status: "OK" });
   });
 
   app.get(`/course/find/:id`, async (req, res) => {
@@ -18,13 +17,11 @@ module.exports = (app) => {
     return res.status(200).send(ret);
   });
 
-  
-
   app.get(`/allPlans`, async (req, res) => {
     console.log("allPlans() query");
     ret = await Plans.find({});
-    f = []
-    for(i=0;i<ret.length;i++){
+    f = [];
+    for (i = 0; i < ret.length; i++) {
       f.push(ret[i].name);
     }
     return res.status(200).send(f);
@@ -50,38 +47,46 @@ module.exports = (app) => {
     bigObject.push([]);
     bigObject.push([]);
 
-    
-
     return res.status(200).send(bigObject);
   });
 
   app.post(`/savePlan`, async (req, res) => {
     console.log("savePlan request.");
-    
+
     console.log(req.body.name);
     console.log(req.body.data);
 
-    Plans.create({
+    previousPlans = Plans.findOne({
       name: req.body.name,
-      data: req.body.data,
     });
-    
-    console.log("Saved.");
-    
-    return res.status(200).send({
-      error: false,
-      status: "Saved",
-    });
+    if (previousPlans.length === 0) {
+      Plans.create({
+        name: req.body.name,
+        data: req.body.data,
+      });
+
+      console.log("Saved.");
+
+      return res.status(200).send({
+        error: false,
+        status: "Saved",
+      });
+    } else {
+      return res.status(200).send({
+        error: true,
+        status: "Plan not available",
+      });
+    }
   });
 
   app.post(`/findPlanByName`, async (req, res) => {
     console.log("findPlanByName request.");
     console.log(req.body.name);
-    
+
     let ret = await Plans.findOne({
       name: req.body.name,
     });
-    
+
     if (ret == null) {
       console.log("Not found.");
       return res.status(200).send({
