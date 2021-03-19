@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "https://bob-da-builder-server.herokuapp.com",
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.6.0",

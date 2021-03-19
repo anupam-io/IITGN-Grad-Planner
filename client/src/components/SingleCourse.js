@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { EditableText, EditableNumber } from "react-editables";
-import { DropdownButton, Dropdown, ButtonGroup } from "react-bootstrap";
+import { DropdownButton, Dropdown} from "react-bootstrap";
 
 function SingleCourse(props) {
   // useEffect(() => {

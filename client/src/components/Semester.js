@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import SingleCourse from "./SingleCourse";
 import { Button } from "react-bootstrap";
 
