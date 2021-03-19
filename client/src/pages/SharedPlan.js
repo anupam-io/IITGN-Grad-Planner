@@ -11,10 +11,15 @@ class SharedPlan extends Component {
     super(props);
     this.state = {
     };
-    this.loadDeafaultSem();
+    // this.loadDeafaultSem();
+
+    console.log(props);
   }
   render() {
-    return (<div></div>);
+    return (<div>
+
+
+    </div>);
   }
 }
 

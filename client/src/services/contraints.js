@@ -1,10 +1,10 @@
 function totalCreditsCheck({totalCredits, branch})
 {
-    if (branch === "Electrical Engg" && totalCredits === 175)
+    if (branch === "Electrical Engg" && totalCredits >= 175)
     {
         return true;
     }
-    else if (totalCredits === 170)
+    else if (totalCredits >= 170)
     {
         return true;
     }
@@ -13,7 +13,7 @@ function totalCreditsCheck({totalCredits, branch})
 
 function HSECoursesCheck({totalHSECredits})
 {
-    if (totalHSECredits === 16)
+    if (totalHSECredits >= 16)
     {
         return true;
     }    
@@ -22,7 +22,7 @@ function HSECoursesCheck({totalHSECredits})
 
 function BSECoursesCheck({totalBSEcredits})
 {
-    if (totalBSEcredits === 8)
+    if (totalBSEcredits >= 8)
     {
         return true;
     }
@@ -31,7 +31,34 @@ function BSECoursesCheck({totalBSEcredits})
 
 function OpenElectivesCheck({totalOPCredits})
 {
-    if (totalOPCredits)
+    if (totalOPCredits >= 16)
+    {
+        return true;
+    }
+    return false;
+}
+
+function DisciplineCheck({totalDisciplineCredits})
+{
+    if (totalDisciplineCredits >= 48)
+    {
+        return true;
+    }
+    return false;
+}
+
+function CompulsoryCheck({totalCompulsoryCredits})
+{
+    if (totalCompulsoryCredits === 100)
+    {
+        return true;
+    }
+    return false;
+}
+
+function AllCheck()
+{
+    if (totalCreditsCheck && CompulsoryCheck && HSECoursesCheck && BSECoursesCheck && DisciplineCheck && OpenElectivesCheck)
     {
         return true;
     }

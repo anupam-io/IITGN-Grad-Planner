@@ -14,13 +14,6 @@ function App() {
       />
       <Navigation />
       <Routes />
-      <footer className="bg-secondary page-footer font-small blue">
-        <div className="footer-copyright text-center py-3">
-          Made by BobDaBuilder<br />
-          MIT License, 2021 <br />
-          <b>Github: BobDaBuilder</b>
-        </div>
-      </footer>
     </div>
   );
 }

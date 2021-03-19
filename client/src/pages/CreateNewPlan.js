@@ -20,32 +20,45 @@ class CreateNewPlan extends Component {
 
   loadDeafaultSem = async () => {
     let res = await axios.get(`/defsem`);
-    this.setState({
+    await this.setState({
       mainData: res.data,
     });
     alert("Default values loaded for CSE.");
   };
 
-  updateMainData = (attr, sem, course, val) => {
+  updateMainData = async(attr, sem, course, val) => {
     console.log("updateMainData() called on: ", val);
     console.log(attr);
     let temp = this.state.mainData;
     temp[sem][course][attr] = val;
 
-    this.setState({
+    await this.setState({
       mainData: temp,
     });
   };
 
-  addCourse = (sem) => {
+  addCourse = async(sem) => {
     console.log("addCourse() called on: ", sem);
     let temp = this.state.mainData;
     temp[sem].push(["", "", 4, "Other"]);
 
-    this.setState({
+    await this.setState({
       mainData: temp,
     });
   };
+
+  deleteCourse = async(sem, courseIndex)=>{
+    console.log("deleteCourse() call on: ", sem, courseIndex);
+    let temp = this.state.mainData;
+    let _temp = temp[sem];
+
+    let delEl = _temp.splice(courseIndex, 1);
+    console.log(delEl);
+    temp[sem] = _temp;
+    
+    await this.setState({mainData: [],});
+    await this.setState({mainData: temp,});
+  }
 
   saveMyPlan = async (e) => {
     e.preventDefault();
@@ -59,7 +72,7 @@ class CreateNewPlan extends Component {
     console.log("Loading plan: ", this.state.term);
     let res = await loadMyPlan(this.state.term);
     if (res.data.status) {
-      this.setState({
+      await this.setState({
         mainData: res.data.data,
       });
       alert("Plan loaded as: " + this.state.term);
@@ -68,8 +81,8 @@ class CreateNewPlan extends Component {
     }
   };
 
-  setTerm = (e) => {
-    this.setState({
+  setTerm = async(e) => {
+    await this.setState({
       term: e,
     });
   };
@@ -86,6 +99,7 @@ class CreateNewPlan extends Component {
           return (
             <div className="my-4" key={index}>
               <Semester
+                deleteCourse={this.deleteCourse}
                 number={index}
                 data={value}
                 updateMainData={this.updateMainData}

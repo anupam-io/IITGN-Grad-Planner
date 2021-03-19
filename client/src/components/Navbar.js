@@ -13,7 +13,7 @@ function Navigation() {
   return (
     <Navbar className="bg-primary" sticky="top">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Brand href="#home">Glanner</Navbar.Brand>
+      <Navbar.Brand href="/" style={{ color: "white" }}>Glanner</Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link style={{ color: "white" }} href="/login">
@@ -24,6 +24,9 @@ function Navigation() {
           </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/dashboard">
             Dashboard
+          </Nav.Link>
+          <Nav.Link style={{ color: "white" }} href="/guidelines">
+            Guidelines
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

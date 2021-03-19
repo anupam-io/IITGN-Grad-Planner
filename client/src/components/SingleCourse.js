@@ -25,12 +25,18 @@ function SingleCourse(props) {
   const [credits, setCredits] = useState(props.credits);
   const [dropdown, setDropDown] = useState(props.type);
 
-
-
   return (
     <div className="col-3">
       <div className="card px-1 my-2">
         <div className="card-body">
+          <button
+            type="button"
+            className="close ml-auto p-2"
+            aria-label="Close"
+            onClick={() => props.deleteCourse(props.sem, props.index)}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
           <div>
             <InlineEdit
               key="0"
@@ -71,7 +77,7 @@ function SingleCourse(props) {
               paramName="message"
               type="number"
               change={(e) => changeCredit(e.message)}
-              validate={e=>(isNaN(e)===false)}
+              validate={(e) => isNaN(e) === false}
               style={{
                 display: "inline-block",
                 padding: 5,
@@ -89,17 +95,16 @@ function SingleCourse(props) {
             onSelect={changeType}
           >
             <div className="bg-secondary">
-
-            <Dropdown.Item eventKey="HSE">HSE</Dropdown.Item>
-            <Dropdown.Item eventKey="BSE">BSE</Dropdown.Item>
-            <Dropdown.Item eventKey="Open Elective">
-              Open Elective
-            </Dropdown.Item>
-            <Dropdown.Item eventKey="Discipline Specific">
-              Discipline Specific
-            </Dropdown.Item>
-            <Dropdown.Item eventKey="Compulsory">Compulsory</Dropdown.Item>
-            <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
+              <Dropdown.Item eventKey="HSE">HSE</Dropdown.Item>
+              <Dropdown.Item eventKey="BSE">BSE</Dropdown.Item>
+              <Dropdown.Item eventKey="Open Elective">
+                Open Elective
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Discipline Specific">
+                Discipline Specific
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Compulsory">Compulsory</Dropdown.Item>
+              <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
             </div>
           </DropdownButton>
         </div>

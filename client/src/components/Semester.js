@@ -32,6 +32,7 @@ function Semester(props) {
                 credits={value[2]}
                 type={value[3]}
                 updateMainData={props.updateMainData}
+                deleteCourse={props.deleteCourse}
                 key={index}
                 sem={props.number}
                 index={index}
