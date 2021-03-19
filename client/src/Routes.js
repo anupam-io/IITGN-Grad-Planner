@@ -14,11 +14,11 @@ function Routes() {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" exact component={App}/>
+        {/* <Route path="/" exact component={App}/> */}
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
         <Route path="/dashboard">
-          {" "}
+          " "
           <Dashboard allPlans={["Plan1", "Plan2", "Plan3"]} />{" "}
         </Route>
         <Route path="/create-new-plan" component={CreateNewPlan}/>

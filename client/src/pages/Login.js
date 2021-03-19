@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { GoogleLogin } from "react-google-login";
-import { Button } from "react-bootstrap";
 
 const clientId = "YOUR_CLIENT_ID.apps.googleusercontent.com";
 

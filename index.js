@@ -7,7 +7,9 @@ require('./models/allModels');
 
 const app = express();
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/test-database`, {
+const {localKey} = require("./mongo.config");
+
+mongoose.connect(localKey, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

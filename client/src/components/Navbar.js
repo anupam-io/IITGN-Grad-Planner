@@ -1,19 +1,14 @@
 import React from "react";
 import "./Navbar.css";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 function Navigation() {
   return (
     <Navbar className="bg-primary" sticky="top">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Brand href="/" style={{ color: "white" }}>Glanner</Navbar.Brand>
+      <Navbar.Brand href="/" style={{ color: "white" }}>
+        Glanner
+      </Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link style={{ color: "white" }} href="/login">
