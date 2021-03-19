@@ -7,7 +7,7 @@ require('./models/allModels');
 
 const app = express();
 mongoose.Promise = global.Promise;
-const {localKey} = require("./mongo.config");
+const {onlineKey} = require("./mongo.config");
 
 mongoose.connect(localKey, {
     useNewUrlParser: true,
