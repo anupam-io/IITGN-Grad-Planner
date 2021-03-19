@@ -1,7 +1,9 @@
 // Connecting mongoose to MongoDB
 const mongoose = require("mongoose");
+const { localKey } = require("./mongo.config");
 mongoose.Promise = global.Promise;
-const {localKey} = require("./mongo.config");
+
+
 mongoose.connect(
     localKey, {
         useNewUrlParser: true,

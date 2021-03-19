@@ -1,11 +1,9 @@
 // Connecting mongoose to MongoDB
 const mongoose = require("mongoose");
+const { localKey } = require("./mongo.config");
 mongoose.Promise = global.Promise;
 
-let localMongo = `mongodb://localhost:27017/test-database`;
-let onlineMongo = `mongodb+srv://test:test@hackrush-2021.ojnjz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-
-mongoose.connect(localMongo, {
+mongoose.connect(localKey, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

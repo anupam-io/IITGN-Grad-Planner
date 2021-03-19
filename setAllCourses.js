@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const {localKey} = require("./mongo.config");
+const {onlineKey, localKey} = require("./mongo.config");
 mongoose.connect(
     localKey, {
         useNewUrlParser: true,

@@ -7,9 +7,9 @@ require('./models/allModels');
 
 const app = express();
 mongoose.Promise = global.Promise;
-const {onlineKey} = require("./mongo.config");
+const {onlineKey, localKey} = require("./mongo.config");
 
-mongoose.connect(onlineKey, {
+mongoose.connect(localKey, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
