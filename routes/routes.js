@@ -5,6 +5,10 @@ const Plans = mongoose.model("plans");
 
 module.exports = (app) => {
   // use http://localhost:5000/course/find/:id
+  app.get(`/status`, async (req, res) => {
+    return res.status(200).send({"status": "OK"});
+  });
+
   app.get(`/course/find/:id`, async (req, res) => {
     const { id } = req.params;
     console.log("find() query for: ", id);
