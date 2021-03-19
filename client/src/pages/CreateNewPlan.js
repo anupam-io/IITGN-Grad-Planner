@@ -28,6 +28,7 @@ class CreateNewPlan extends Component {
 
   updateMainData = (attr, sem, course, val) => {
     console.log("updateMainData() called on: ", val);
+    console.log(attr);
     let temp = this.state.mainData;
     temp[sem][course][attr] = val;
 
@@ -77,7 +78,7 @@ class CreateNewPlan extends Component {
     return (
       <div style={{ textAlign: "center" }} className="App p-0">
         <div className="jumbotron">
-          <div className="display-1">Modern Graduation Planner</div>
+          <div className="display-1">Graduation Planner</div>
           <h3 className="lead">You graduation in your hands</h3>
         </div>
 
