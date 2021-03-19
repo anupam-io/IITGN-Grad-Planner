@@ -5,8 +5,19 @@ import Semester from "../components/Semester";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
+import {} from "./../services/contraints";
 
 class CreateNewPlan extends Component {
+  constructor() {
+    super();
+    this.state = {
+      mainData: [],
+      term: "",
+      semSum: [0, 0, 0, 0, 0, 0, 0, 0]
+    };
+    this.loadDeafaultSem();
+  }
+
   loadDeafaultSem = async () => {
     let res = await axios.get(`/defsem`);
     this.setState({
@@ -14,14 +25,6 @@ class CreateNewPlan extends Component {
     });
     return res;
   };
-  constructor() {
-    super();
-    this.state = {
-      mainData: [],
-      term: "",
-    };
-    this.loadDeafaultSem();
-  }
 
   updateMainData = (attr, sem, course, val) => {
     console.log("updateMainData() called on: ", val);
@@ -30,7 +33,6 @@ class CreateNewPlan extends Component {
 
     this.setState({
       mainData: temp,
-      term: "",
     });
   };
 
@@ -54,9 +56,9 @@ class CreateNewPlan extends Component {
     e.preventDefault();
     console.log("Loading plan: ", this.state.term);
     let res = await loadMyPlan(this.state.term);
-    if(res.data.status){
+    if (res.data.status) {
       this.setState({
-        mainData: res.data.data
+        mainData: res.data.data,
       });
     }
   };
@@ -83,6 +85,7 @@ class CreateNewPlan extends Component {
                 data={value}
                 updateMainData={this.updateMainData}
                 addCourse={this.addCourse}
+                sum={this.state.semSum[index]}
               />
             </div>
           );

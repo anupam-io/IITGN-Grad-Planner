@@ -8515,6 +8515,11 @@ react-dom@^16.0.0, react-dom@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-edit-inline2@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-edit-inline2/-/react-edit-inline2-1.0.2.tgz#db5c2204f03bd57fe1bd791184e46a2d87e63e55"
+  integrity sha512-5+sFBpfoHNf8tj988mbtLJhZUtH9brIHO5mNGyshW95wVmPGvnzoOuLuK2hG+v15o6uKe5aEKS6j+cmj/zwDbw==
+
 react-editables@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/react-editables/-/react-editables-0.0.1.tgz#db98f3f29788939e22dc631db88e0627f7b3beea"

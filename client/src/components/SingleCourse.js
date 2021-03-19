@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { EditableText, EditableNumber } from "react-editables";
-import { DropdownButton, Dropdown} from "react-bootstrap";
+import { DropdownButton, Dropdown } from "react-bootstrap";
+import InlineEdit from "react-edit-inline2";
 
 function SingleCourse(props) {
-  // useEffect(() => {
-  // });
-
   const changeName = (val) => {
     props.updateMainData(0, props.sem, props.index, val);
   };
@@ -18,7 +15,6 @@ function SingleCourse(props) {
   const changeType = (val) => {
     props.updateMainData(3, props.sem, props.index, val);
   };
-  
 
   const [dropdown, setDropDown] = useState(props.type);
 
@@ -26,36 +22,71 @@ function SingleCourse(props) {
     <div className="col-3">
       <div className="card px-1 my-2 bg-warning">
         <div className="card-body">
-          <EditableText
-            value={props.name}
-            onChange={changeName}
-            placeholder="Name"
-          />
-          <EditableText
-            value={props.id}
-            onChange={changeId}
-            placeholder="Course ID"
-          />
-          <EditableNumber
-            value={props.credits}
-            onChange={changeCredit}
-            placeholder="Credits"
-          />
+          <div>
+            <InlineEdit
+              text={props.name}
+              placeholder="Name"
+              paramName="message"
+              change={(e) => changeName(e.message)}
+              style={{
+                display: "inline-block",
+                padding: 5,
+                fontSize: 18,
+                outline: 0,
+                border: 5,
+              }}
+            />
+          </div>
 
+          <div>
+            <InlineEdit
+              text={props.id}
+              placeholder="Id"
+              paramName="message"
+              change={(e) => changeId(e.message)}
+              style={{
+                display: "inline-block",
+                padding: 5,
+                fontSize: 18,
+                outline: 0,
+                border: 5,
+              }}
+            />
+          </div>
+          <div>
+            <InlineEdit
+              text={props.credits}
+              placeholder="Credits"
+              paramName="message"
+              change={(e) => changeCredit(e.message)}
+              style={{
+                display: "inline-block",
+                padding: 5,
+                fontSize: 18,
+                outline: 0,
+                border: 5,
+              }}
+            />
+          </div>
 
           <DropdownButton
             className="my-2"
             id="dropdown-basic-button"
             title={dropdown}
-            onSelect={e=>{setDropDown(e); changeType(e);}}
+            onSelect={(e) => {
+              setDropDown(e);
+              changeType(e);
+            }}
           >
-            <Dropdown.Item eventKey="HSS">HSS</Dropdown.Item>
-            <Dropdown.Item eventKey="BS">BS</Dropdown.Item>
+            <Dropdown.Item eventKey="HSE">HSE</Dropdown.Item>
+            <Dropdown.Item eventKey="BSE">BSE</Dropdown.Item>
             <Dropdown.Item eventKey="Open Elective">
               Open Elective
             </Dropdown.Item>
-            <Dropdown.Item eventKey="Core-Compulsory">Core-Compulsory</Dropdown.Item>
-            <Dropdown.Item eventKey="Extended Core">Extended Core</Dropdown.Item>
+            <Dropdown.Item eventKey="Discipline Specific">
+              Discipline Specific
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="Compulsory">Compulsory</Dropdown.Item>
             <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
           </DropdownButton>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import SingleCourse from "./SingleCourse";
 import { Button } from "react-bootstrap";
 
@@ -20,7 +20,7 @@ function Semester(props) {
 
       <div className="row">
         <div className="col-1" style={{ margin: "auto" }}>
-          512
+          {props.sum}
         </div>
 
         <div className="row col-10">
