@@ -1,7 +1,7 @@
 const axios = require("axios");
 const endPoint = "/findPlanByName";
 
-export default async (name) => {
+export default async function loadMyPlan(name){
   let ret = await axios.post(endPoint, {
     name: name,
   });

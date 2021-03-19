@@ -63,12 +63,17 @@ class CreateNewPlan extends Component {
   saveMyPlan = async (e) => {
     e.preventDefault();
     console.log("Saving as: ", this.state.term);
-    await saveMyPlan(this.state.term, this.state.mainData);
+
+    console.log("Data=>>", this.state.mainData)
+    
+    let res = await saveMyPlan(this.state.term, this.state.mainData);
+    console.log(res);
     alert("Plan saved as: " + this.state.term + ".");
   };
 
   loadMyPlan = async (e) => {
     e.preventDefault();
+    
     console.log("Loading plan: ", this.state.term);
     let res = await loadMyPlan(this.state.term);
     if (res.data.status) {

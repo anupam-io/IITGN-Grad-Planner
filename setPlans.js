@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { localKey, onlineKey } = require("./mongo.config");
 mongoose.Promise = global.Promise;
 
-mongoose.connect(onlineKey, {
+mongoose.connect(localKey, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

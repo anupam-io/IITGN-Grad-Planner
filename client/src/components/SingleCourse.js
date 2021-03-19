@@ -72,7 +72,7 @@ function SingleCourse(props) {
           </div>
           <div>
             <InlineEdit
-              text={credits}
+              text={credits.toString()}
               placeholder="Credits"
               paramName="message"
               type="number"

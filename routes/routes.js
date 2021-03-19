@@ -54,28 +54,23 @@ module.exports = (app) => {
     console.log("savePlan request.");
 
     console.log(req.body.name);
-    console.log(req.body.data);
-
-    previousPlans = Plans.findOne({
-      name: req.body.name,
+    // console.log(req.body.data);
+    await Plans.remove({
+      name: req.body.name
     });
-    if (previousPlans.length === 0) {
-      Plans.create({
+    
+    try {
+      await Plans.create({
         name: req.body.name,
         data: req.body.data,
       });
-
-      console.log("Saved.");
-
       return res.status(200).send({
-        error: false,
-        status: "Saved",
+        error: false
       });
-    } else {
+    } catch (error) {
       return res.status(200).send({
-        error: true,
-        status: "Plan not available",
-      });
+        error: true
+      });  
     }
   });
 
