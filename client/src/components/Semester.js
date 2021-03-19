@@ -14,7 +14,7 @@ function Semester(props) {
   return (
     <div
       className="m-0 py-4"
-      style={{ backgroundColor: "#F5D7E3", borderRadius: "5px" }}
+      style={{ backgroundColor: "#bde0fe", borderRadius: "5px" }}
     >
       <h2>Semester {props.number+1}</h2>
 

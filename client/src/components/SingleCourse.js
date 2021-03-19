@@ -20,7 +20,7 @@ function SingleCourse(props) {
 
   return (
     <div className="col-3">
-      <div className="card px-1 my-2 bg-warning">
+      <div className="card px-1 my-2">
         <div className="card-body">
           <div>
             <InlineEdit
@@ -72,6 +72,7 @@ function SingleCourse(props) {
           </div>
 
           <DropdownButton
+          
             className="my-2"
             id="dropdown-basic-button"
             title={dropdown}
@@ -80,6 +81,8 @@ function SingleCourse(props) {
               changeType(e);
             }}
           >
+            <div className="bg-secondary">
+
             <Dropdown.Item eventKey="HSE">HSE</Dropdown.Item>
             <Dropdown.Item eventKey="BSE">BSE</Dropdown.Item>
             <Dropdown.Item eventKey="Open Elective">
@@ -90,6 +93,7 @@ function SingleCourse(props) {
             </Dropdown.Item>
             <Dropdown.Item eventKey="Compulsory">Compulsory</Dropdown.Item>
             <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
+            </div>
           </DropdownButton>
         </div>
       </div>
