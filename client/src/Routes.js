@@ -7,7 +7,6 @@ import history from "./history";
 import CreateNewPlan from "./pages/CreateNewPlan";
 import Guidelines from './pages/Guidelines';
 import NotFound from './pages/404';
-import App from './MainPage';
 
 
 function Routes() {

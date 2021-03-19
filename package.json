@@ -9,7 +9,8 @@
     "server": "nodemon index.js",
     "c": "node setAllCourses.js",
     "s": "node setDefaultSem.js",
-    "p": "node setPlans.js"
+    "p": "node setPlans.js",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "keywords": [],
   "author": "",

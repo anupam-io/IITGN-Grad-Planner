@@ -25,6 +25,8 @@ module.exports = (app) => {
         const query = await Courses.findOne({ id: data[i].courses[j] });
         if (query != null) {
           temp.push([query["id"], query["name"], query["credits"], "Other"]);
+        } else {
+          temp.push([data[i].courses[j], "", "4", "Other"]);
         }
       }
       bigObject.push(temp);
