@@ -11,7 +11,7 @@ function Logout()
     }
 
     return (
-        <div>
+        <div className="jumbotron">
             <Container>
                 <GoogleLogout
                 clientId={clientId}

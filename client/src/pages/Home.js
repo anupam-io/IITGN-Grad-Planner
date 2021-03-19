@@ -3,7 +3,7 @@ import "../App.css"
 
 function Home() {
   return (
-    <div>
+    <div className="jumbotron">
         ask;djfa
         adlkfjad
         askld;fja

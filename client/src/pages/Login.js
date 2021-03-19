@@ -14,7 +14,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="jumbotron">
       <Container>
         <GoogleLogin
           clientId={clientId}
