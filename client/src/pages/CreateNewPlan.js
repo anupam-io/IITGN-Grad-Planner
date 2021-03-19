@@ -5,7 +5,6 @@ import Semester from "../components/Semester";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import { Input } from "semantic-ui-react";
 
 class CreateNewPlan extends Component {
   loadDeafaultSem = async () => {
