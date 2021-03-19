@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "yarn start --prefix client",
-    "server": "nodemon index.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node index.js",
+    "client": "cd client; yarn start;",
+    "server": "nodemon index.js",
     "c": "node setAllCourses.js",
     "s": "node setDefaultSem.js",
     "p": "node setPlans.js"

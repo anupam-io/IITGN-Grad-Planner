@@ -13,7 +13,7 @@ class CreateNewPlan extends Component {
     this.state = {
       mainData: [],
       term: "",
-      semSum: [0, 0, 0, 0, 0, 0, 0, 0]
+      semSum: [0, 0, 0, 0, 0, 0, 0, 0],
     };
     this.loadDeafaultSem();
   }
@@ -23,7 +23,7 @@ class CreateNewPlan extends Component {
     this.setState({
       mainData: res.data,
     });
-    return res;
+    alert("Default values loaded for CSE.");
   };
 
   updateMainData = (attr, sem, course, val) => {
@@ -50,6 +50,7 @@ class CreateNewPlan extends Component {
     e.preventDefault();
     console.log("Saving as: ", this.state.term);
     await saveMyPlan(this.state.term, this.state.mainData);
+    alert("Plan saved as: " + this.state.term + ".");
   };
 
   loadMyPlan = async (e) => {
@@ -60,6 +61,9 @@ class CreateNewPlan extends Component {
       this.setState({
         mainData: res.data.data,
       });
+      alert("Plan loaded as: " + this.state.term);
+    } else {
+      alert("Sorry, plan: " + this.state.term + " not found");
     }
   };
 

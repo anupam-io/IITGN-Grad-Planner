@@ -4,13 +4,13 @@ import { Navbar, Nav} from 'react-bootstrap';
 
 function Navigation(){
     return (
-        <Navbar bg="primary" variant="dark">
+        <Navbar className="bg-primary" >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/logout">Logout</Nav.Link>
-                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                    <Nav.Link style={{color: "white"}} href="/login">Login</Nav.Link>
+                    <Nav.Link style={{color: "white"}} href="/logout">Logout</Nav.Link>
+                    <Nav.Link style={{color: "white"}} href="/dashboard">Dashboard</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

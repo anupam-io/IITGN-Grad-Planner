@@ -58,7 +58,9 @@ function SingleCourse(props) {
               text={props.credits}
               placeholder="Credits"
               paramName="message"
+              type="number"
               change={(e) => changeCredit(e.message)}
+              validate={e=>(isNaN(e)===false)}
               style={{
                 display: "inline-block",
                 padding: 5,

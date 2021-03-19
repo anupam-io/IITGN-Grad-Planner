@@ -40,15 +40,15 @@
  - Shared plan page
 
 
-## Helpful commands for linux:
- - sudo service mongod start
- - sudo service mongod status
- - sudo service mongod stop
- - sudo service mongod restart
-
-## Stopping previous servers
-### Ubuntu
- - `i`
-### Windows
+## Helpful commands 
+### for local `mongod` in linux:
+ - `sudo service mongod start`
+ - `sudo service mongod status`
+ - `sudo service mongod stop`
+ - `sudo service mongod restart`
+### Stopping stucked servers
+#### Linux
+ - `sudo fuser -k 8000/tcp`
+#### Windows
  - `netstat -ano | findstr :<PORT>`
  - `taskkill /PID <PID> /F`
