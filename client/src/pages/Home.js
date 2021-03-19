@@ -1,6 +1,4 @@
 import React from "react";
-import Navigation from "../components/Navbar";
-import Routes from "../Routes";
 import "../App.css"
 
 function Home() {
@@ -11,7 +9,7 @@ function Home() {
         askld;fja
         aslk;djfa
         salk;djfa
-        
+
     </div>
   );
 }

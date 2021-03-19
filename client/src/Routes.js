@@ -7,6 +7,7 @@ import history from "./history";
 import CreateNewPlan from "./pages/CreateNewPlan";
 import Guidelines from './pages/Guidelines';
 import Home from './pages/Home'
+import NotFound from './pages/404';
 
 
 function Routes() {
@@ -21,6 +22,7 @@ function Routes() {
         </Route>
         <Route path="/create-new-plan" component={CreateNewPlan}/>
         <Route path="/guidelines" component={Guidelines}/>
+        <Route component={NotFound}/>
       </Switch>
     </Router>
   );
