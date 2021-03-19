@@ -25,7 +25,7 @@ app.use(cors()) // Use this after the variable declaration
 //IMPORT ROUTES
 require('./routes/routes')(app);
 
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
   const path = require('path');
@@ -33,8 +33,7 @@ if (process.env.NODE_ENV === 'production') {
       res.header("Access-Control-Allow-Origin", "*");
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   })
-
-}
+// }
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
