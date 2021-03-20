@@ -3,13 +3,10 @@ import "../App.css"
 
 function Home() {
   return (
-    <div className="jumbotron">
-        ask;djfa
-        adlkfjad
-        askld;fja
-        aslk;djfa
-        salk;djfa
-
+    <div className="jumbotron" style={{marginLeft: "20em", marginRight: "20em", marginTop: "2em"}}>
+      <div className="display-3 text-center">
+      Welcome to the your hypothetical graduation.
+      </div>
     </div>
   );
 }

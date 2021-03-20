@@ -5,7 +5,7 @@ import Semester from "../components/Semester";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import {} from "./../services/contraints";
+import {ExtractMainData} from "./../services/contraints";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class CreateNewPlan extends Component {
     // alert("Default values loaded for CSE.");
   };
 
-  updateMainData = async(attr, sem, course, val) => {
+  updateMainData = async (attr, sem, course, val) => {
     console.log("updateMainData() called on: ", val);
     console.log(attr);
     let temp = this.state.mainData;
@@ -37,7 +37,7 @@ class CreateNewPlan extends Component {
     });
   };
 
-  addCourse = async(sem) => {
+  addCourse = async (sem) => {
     console.log("addCourse() called on: ", sem);
     let temp = this.state.mainData;
     temp[sem].push(["", "", 4, "Other"]);
@@ -47,7 +47,7 @@ class CreateNewPlan extends Component {
     });
   };
 
-  deleteCourse = async(sem, courseIndex)=>{
+  deleteCourse = async (sem, courseIndex) => {
     console.log("deleteCourse() call on: ", sem, courseIndex);
     let temp = this.state.mainData;
     let _temp = temp[sem];
@@ -55,17 +55,17 @@ class CreateNewPlan extends Component {
     let delEl = _temp.splice(courseIndex, 1);
     console.log(delEl);
     temp[sem] = _temp;
-    
-    await this.setState({mainData: [],});
-    await this.setState({mainData: temp,});
-  }
+
+    await this.setState({ mainData: [] });
+    await this.setState({ mainData: temp });
+  };
 
   saveMyPlan = async (e) => {
     e.preventDefault();
     console.log("Saving as: ", this.state.term);
 
-    console.log("Data=>>", this.state.mainData)
-    
+    console.log("Data=>>", this.state.mainData);
+
     let res = await saveMyPlan(this.state.term, this.state.mainData);
     console.log(res);
     alert("Plan saved as: " + this.state.term + ".");
@@ -73,7 +73,7 @@ class CreateNewPlan extends Component {
 
   loadMyPlan = async (e) => {
     e.preventDefault();
-    
+
     console.log("Loading plan: ", this.state.term);
     let res = await loadMyPlan(this.state.term);
     if (res.data.status) {
@@ -86,7 +86,7 @@ class CreateNewPlan extends Component {
     }
   };
 
-  setTerm = async(e) => {
+  setTerm = async (e) => {
     await this.setState({
       term: e,
     });
@@ -100,7 +100,7 @@ class CreateNewPlan extends Component {
           <h3 className="lead">You graduation in your hands</h3>
         </div>
 
-        {this.state.mainData.map((value, index) => {
+        {/* {this.state.mainData.map((value, index) => {
           return (
             <div className="my-4" key={index}>
               <Semester
@@ -113,27 +113,83 @@ class CreateNewPlan extends Component {
               />
             </div>
           );
-        })}
+        })} */}
 
-        <Row className="p-2">
-          <Col>
-            <Button variant="warning">Check total credits</Button>
-          </Col>
-        </Row>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col-2">#</th>
+              <th scope="col-8">Contraint</th>
+              <th scope="col-2">Status</th>
+              <th scope="col-2">Check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Total credits check</td>
+              <td>
+                <div class="alert alert-success" role="alert">
+                  <strong>Well done!</strong> You successfully read this
+                  important alert message.
+                </div>
+              </td>
+              <td><Button variant="warning" onClick={() =>ExtractMainData(this.state.mainData, "TC")}>Check</Button></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Total HSS courses</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td><Button variant="warning">Check</Button></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Total Open Electives</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td><Button variant="warning">Check</Button></td>
+              
+              
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Total BS Electives</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td><Button variant="warning">Check</Button></td>
 
-        <Row className="p-2">
-          <Col>
-            <Button variant="warning">Check total credit features</Button>
-          </Col>
-        </Row>
+            </tr>
+            <tr>
+              <th scope="row">{">"}</th>
+              <td className="h4 py-auto">Graduation Status</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td><Button className="mt-auto px-4"><strong>Check</strong></Button></td>
 
-        <Row className="p-2">
-          <Col>
-            <Button variant="warning">Check total credit features</Button>
-          </Col>
-        </Row>
+            </tr>
+          </tbody>
+        </table>
 
-        <Row className="p-2">
+        <Button className="px-5"><strong><h2>Check All</h2></strong></Button>
+
+        <Row className="mt-5 p-2">
           <Col>
             <Form onSubmit={this.saveMyPlan}>
               <Form.Group
@@ -143,7 +199,7 @@ class CreateNewPlan extends Component {
               >
                 <Form.Control />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button disabled variant="primary" type="submit">
                 Save Plan
               </Button>
             </Form>
@@ -158,7 +214,7 @@ class CreateNewPlan extends Component {
                 <Form.Control />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button disabled variant="primary" type="submit">
                 Load Plan
               </Button>
             </Form>

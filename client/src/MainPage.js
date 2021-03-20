@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "./components/Navbar";
 import Routes from "./Routes";
 import "./App.css"
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       />
       <Navigation />
       <Routes />
+      <Footer/>
     </div>
   );
 }
