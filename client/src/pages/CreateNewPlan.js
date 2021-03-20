@@ -12,9 +12,9 @@ import {
 } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import { singleQuery } from "./../services/contraints";
+import singleQuery from './../services/contraints';
 import ConstraintMessage from "../components/ConstraintMessage";
-import Sidebar from "../components/Sidebar";
+// import Sidebar from "../components/Sidebar";
 
 class CreateNewPlan extends Component {
   constructor() {

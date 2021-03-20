@@ -34,7 +34,7 @@ function ExtractMainData(MainData){
   return [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits];
 }
 
-function singleQuery(mainData, keyword, branch){
+export default function singleQuery(mainData, keyword, branch){
   const [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits] = ExtractMainData(mainData);
 
   if (keyword === "TC") {
@@ -142,7 +142,3 @@ function OTHERCREDITSCHECK(val)
   }
   return [true, 'Failed Check, Total ES Credits Checked: '+val];
 }
-
-module.exports = {
-  singleQuery
-};
