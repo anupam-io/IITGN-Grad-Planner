@@ -11,7 +11,7 @@ function Home() {
           textAlign: "center"
         }}
       >
-        Welcome to the your graduation planner.
+        Welcome to your graduation planner
       </div>
     </div>
   );

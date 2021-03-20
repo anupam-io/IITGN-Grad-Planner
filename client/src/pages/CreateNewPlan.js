@@ -15,6 +15,7 @@ import loadMyPlan from "./../services/loadMyPlan";
 import singleQuery from './../services/contraints';
 import ConstraintMessage from "../components/ConstraintMessage";
 // import Sidebar from "../components/Sidebar";
+import ShareLink from './ShareLink';
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -91,7 +92,7 @@ class CreateNewPlan extends Component {
 
     let res = await saveMyPlan(this.state.term, this.state.mainData);
     console.log(res);
-    alert("Plan saved as: " + this.state.term + ".");
+    alert("Plan saved as: " + this.state.term + "Go to Dashboard to Share your Plan");
   };
 
   loadMyPlan = async (e) => {
@@ -449,6 +450,9 @@ class CreateNewPlan extends Component {
                   Load Plan
                 </Button>
               </Form>
+            </Col>
+            <Col>
+            <ShareLink/>
             </Col>
           </Row>
         </div>

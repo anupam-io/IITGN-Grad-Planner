@@ -7,13 +7,10 @@ function Navigation() {
     <Navbar className="bg-primary" sticky="top">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Brand href="/" style={{ color: "white" }}>
-        Glanner
+        Planner
       </Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          {/* <Nav.Link style={{ color: "white" }} href="/guidelines">
-            Guidelines
-          </Nav.Link> */}
           <Nav.Link style={{ color: "white" }} href="/login">
             Login
           </Nav.Link>
@@ -22,6 +19,9 @@ function Navigation() {
           </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/logout">
             Logout
+          </Nav.Link>
+          <Nav.Link style={{ color: "white" }} href="/gen-share-link">
+            Generate Sharelable Link
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
