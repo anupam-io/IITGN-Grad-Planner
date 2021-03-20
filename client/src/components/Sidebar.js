@@ -1,25 +1,14 @@
-import React from 'react';
+import React from "react";
 // Basic Sidedrawer
-import { Div, Button, SideDrawer, Icon, Text } from "atomize";
-import Guidelines from './Guidelines';
+import { Div, SideDrawer, Icon, Text } from "atomize";
+import Guidelines from "./Guidelines";
+import { Button } from "react-bootstrap";
 
 const BasicSideDrawer = ({ isOpen, onClose }) => {
   return (
     <SideDrawer isOpen={isOpen} onClose={onClose}>
       <Div d="flex" m={{ b: "4rem" }}>
-        
-        <Guidelines/>
-      </Div>
-      <Div d="flex" justify="flex-end">
-        <Button
-          onClick={onClose}
-          bg="gray200"
-          textColor="medium"
-          m={{ r: "1rem" }}
-        >
-          Okay
-        </Button>
-        
+        <Guidelines />
       </Div>
     </SideDrawer>
   );
@@ -30,7 +19,7 @@ class Drawer extends React.Component {
     super(props);
 
     this.state = {
-      showSideDrawer: false
+      showSideDrawer: false,
     };
   }
 
@@ -38,20 +27,22 @@ class Drawer extends React.Component {
     const { showSideDrawer } = this.state;
 
     return (
-      <>
-        <Button
-          bg="info700"
-          hoverBg="info600"
-          m={{ r: "0.5rem" }}
-          onClick={() => this.setState({ showSideDrawer: true })}
-        >
-          Guidelines
-        </Button>
+      <div className="p-2">
+        <div className="float-left">
+          <Button
+            // style={{position: "fixed"}}
+            bg="info700"
+            hoverBg="info600"
+            m={{ r: "0.5rem" }}
+            onClick={() => this.setState({ showSideDrawer: !this.state.showSideDrawer })}
+          >
+            Show guidelines
+          </Button>
+        </div>
         <BasicSideDrawer
           isOpen={showSideDrawer}
-          onClose={() => this.setState({ showSideDrawer: false })}
         />
-      </>
+      </div>
     );
   }
 }

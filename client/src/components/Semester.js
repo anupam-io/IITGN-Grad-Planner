@@ -13,8 +13,8 @@ function Semester(props) {
 
   return (
     <div
-      className="m-0 py-4"
-      style={{ backgroundColor: "#bde0fe", borderRadius: "5px" }}
+      className="m-0 py-4 alert-primary"
+      style={{ borderRadius: "5px" }}
     >
       <h2>Semester {props.number + 1}</h2>
 
@@ -27,8 +27,8 @@ function Semester(props) {
           {props.data.map((value, index) => {
             return (
               <SingleCourse
-                id={value[0]}
-                name={value[1]}
+                name={value[0]}
+                id={value[1]}
                 credits={value[2]}
                 type={value[3]}
                 updateMainData={props.updateMainData}

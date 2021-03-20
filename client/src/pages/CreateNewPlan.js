@@ -2,12 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Semester from "../components/Semester";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Col,
+  Row,
+  DropdownButton,
+  Dropdown,
+} from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import { singleQuery } from "./../services/contraints";
 import ConstraintMessage from "../components/ConstraintMessage";
-import Sidebar from '../components/Sidebar';
+import Sidebar from "../components/Sidebar";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -25,6 +32,7 @@ class CreateNewPlan extends Component {
       DS: [false, message],
       Other: [false, message],
       all: [false, message],
+      branch: "Computer Science",
     };
     this.loadDeafaultSem();
   }
@@ -143,19 +151,19 @@ class CreateNewPlan extends Component {
     }
   };
 
-  updateSemSum = ()=>{
+  updateSemSum = () => {
     let arr = new Array(8);
-    for(let i=0;i<8;i++){
+    for (let i = 0; i < 8; i++) {
       let temp = 0;
-      for(let j=0;j<this.state.mainData[i].length; j++){
-        temp+=parseInt(this.state.mainData[i][j][2])
+      for (let j = 0; j < this.state.mainData[i].length; j++) {
+        temp += parseInt(this.state.mainData[i][j][2]);
       }
       arr[i] = temp;
     }
     this.setState({
-      semSum: arr
+      semSum: arr,
     });
-  }
+  };
 
   checkAll = async (e) => {
     console.log("checkAll() called.");
@@ -184,37 +192,80 @@ class CreateNewPlan extends Component {
     console.log(allStatus);
   };
 
+  changeBranch = (e) => {
+    this.setState({
+      branch: e
+    });
+  };
+
   render() {
     return (
-      <>
-        <Sidebar/>
+      <div>
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
 
-        <div style={{ textAlign: "center" }} className="App p-0">
-          {this.state.mainData.map((value, index) => {
-            return (
-              <div className="my-4" key={index}>
-                <Semester
-                  deleteCourse={this.deleteCourse}
-                  number={index}
-                  data={value}
-                  updateMainData={this.updateMainData}
-                  addCourse={this.addCourse}
-                  sum={this.state.semSum[index]}
-                />
-              </div>
-            );
-          })}
+        <div className="row justify-content-center mt-4">
+          <h4 className="my-auto"> Your Branch: </h4>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title={this.state.branch}
+            onSelect={this.changeBranch}
+          >
+            <div className="bg-secondary">
+              <Dropdown.Item eventKey="Computer Science">
+                Computer Science
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Electrical Engg">
+                Electrical Engg
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Mechanical Engg">
+                Mechanical Engg
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Civil Engg">Civil Engg</Dropdown.Item>
+              <Dropdown.Item eventKey="Chemical Engg">
+                Chemical Engg
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Material Science">
+                Material Science
+              </Dropdown.Item>
+            </div>
+          </DropdownButton>
+        </div>
+
+        <div>
+          {/* <div style={{ textAlign: "center" }} className="App p-0">
+            {this.state.mainData.map((value, index) => {
+              return (
+                <div className="my-4" key={index}>
+                  <Semester
+                    deleteCourse={this.deleteCourse}
+                    number={index}
+                    data={value}
+                    updateMainData={this.updateMainData}
+                    addCourse={this.addCourse}
+                    sum={this.state.semSum[index]}
+                  />
+                </div>
+              );
+            })}
+          </div> */}
 
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col-2">#</th>
-                <th scope="col-8">Contraint</th>
-                <th scope="col-2">Status</th>
-                <th scope="col-2">Check</th>
+                <th style={{ width: "10%" }} scope="col">
+                  #
+                </th>
+                <th style={{ width: "30%" }} scope="col">
+                  Contraint
+                </th>
+                <th style={{ width: "50%", textAlign: "center" }} scope="col">
+                  Status
+                </th>
+                <th style={{ width: "10%" }} scope="col">
+                  Check
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -354,15 +405,14 @@ class CreateNewPlan extends Component {
                 </td>
                 <td>
                   <strong>
-
-                  <ConstraintMessage
-                    message={this.state.all[1]}
-                    value={this.state.all[0]}
+                    <ConstraintMessage
+                      message={this.state.all[1]}
+                      value={this.state.all[0]}
                     />
-                    </strong>
+                  </strong>
                 </td>
                 <td>
-                  <Button className="mt-auto px-4" onClick={this.checkAll}>
+                  <Button className="mt-auto px-2" onClick={this.checkAll}>
                     <strong>Check All</strong>
                   </Button>
                 </td>
@@ -402,7 +452,7 @@ class CreateNewPlan extends Component {
             </Col>
           </Row>
         </div>
-      </>
+      </div>
     );
   }
 }
