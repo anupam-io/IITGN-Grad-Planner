@@ -1,11 +1,11 @@
 // Connecting mongoose to MongoDB
 const mongoose = require("mongoose");
-const { localKey } = require("./mongo.config");
+const { localKey, onlineKey } = require("./mongo.config");
 mongoose.Promise = global.Promise;
 
 
 mongoose.connect(
-    localKey, {
+    onlineKey, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
