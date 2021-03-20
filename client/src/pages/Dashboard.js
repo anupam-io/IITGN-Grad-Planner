@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import PlanCard from "../components/PlanCard";
 import history from "../history";
@@ -7,16 +7,15 @@ const axios = require("axios");
 
 
 function Dashboard() {
-  let allPlans = [];
+  const [allPlans, setAllPlans] = useState([]);
   
   const loadPlanNames = async()=>{
     const endPoint = "/allPlans";
     let ret = await axios.get(endPoint);
-    console.log(ret.data);
-    allPlans = ret.data;
+    setAllPlans(ret.data);
   };
   // await loadPlanNames();
-  
+  loadPlanNames();
 
   return (
     <div>
