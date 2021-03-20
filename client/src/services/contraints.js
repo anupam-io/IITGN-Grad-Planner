@@ -1,138 +1,144 @@
-var totalCredits = 0;
-var HSECredits = 0;
-var BSECredits = 0;
-var OPECredits = 0;
-var DisciplineCredits = 0;
-var ESCredits = 0;
-var OtherCredits = 0;
-
-function ExtractMainData(MainData, keyword) {
-  console.log("ExtractMainData() called with: ", keyword);
+function ExtractMainData(MainData){
+  var totalCredits = 0;
+  var HSECredits = 0;
+  var BSECredits = 0;
+  var OPCredits = 0;
+  var DisciplineCredits = 0;
+  var ESCredits = 0;
+  var OtherCredits = 0;
   for (let sem = 0; sem < MainData.length; sem += 1) {
     for (let courses = 0; courses < MainData[sem].length; courses += 1) {
-      totalCredits += MainData[sem][courses][2];
+      totalCredits += parseInt(MainData[sem][courses][2]);
 
       if (MainData[sem][courses][3] === "HS") {
-        HSECredits += MainData[sem][courses][2];
+        console.log();
+        HSECredits += parseInt(MainData[sem][courses][2]);
       }
       if (MainData[sem][courses][3] === "BS") {
-        BSECredits += MainData[sem][courses][2];
+        BSECredits += parseInt(MainData[sem][courses][2]);
       }
       if (MainData[sem][courses][3] === "Open Elective") {
-        OPECredits += MainData[sem][courses][2];
+        OPCredits += parseInt(MainData[sem][courses][2]);
       }
       if (MainData[sem][courses][3] === "Discipline Specific") {
-        DisciplineCredits += MainData[sem][courses][2];
+        DisciplineCredits += parseInt(MainData[sem][courses][2]);
       }
       if (MainData[sem][courses][3] === "ES") {
-        ESCredits += MainData[sem][courses][2];
+        ESCredits += parseInt(MainData[sem][courses][2]);
       }
       if (MainData[sem][courses][3] === "Other"){
-        OtherCredits += MainData[sem][courses][2];
+        OtherCredits += parseInt(MainData[sem][courses][2]);
       }
     }
   }
+  return [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits];
+}
+
+function singleQuery(mainData, keyword) {
+  const [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits] = ExtractMainData(mainData);
 
   if (keyword === "TC") {
     return totalCreditsCheck({ totalCredits, branch: "CSE" });
   }
   else if (keyword === "HS")
   {
-    return HSSCREDITSCHECK({HSECredits});
+    console.log(HSECredits);
+    return HSSCREDITSCHECK(HSECredits);
   }
   else if (keyword === "BS")
   {
-    return BSECREITSCHECK({BSECredits});
+    return BSECREITSCHECK(BSECredits);
   }
   else if (keyword === "OP")
   {
-    return OPENCREDITSCHECK({});
+    return OPENCREDITSCHECK(OPCredits);
   }
   else if (keyword === "ES")
   {
-    return ESCREDITSCHECK({ESCredits});
+    return ESCREDITSCHECK(ESCredits);
   }
-  else if (keyword === "D")
+  else if (keyword === "DS")
   {
-    return DISCIPLINECREDITSCHECK({DisciplineCredits});
+    return DISCIPLINECREDITSCHECK(DisciplineCredits);
   }
-  else if (keyword === "O")
+  else if (keyword === "Other")
   {
-    return OTHERCREDITSCHECK({OtherCredits});
+    return OTHERCREDITSCHECK(OtherCredits);
   }
 }
 
-function totalCreditsCheck({ totalCredits, branch }) {
+function totalCreditsCheck({ totalCredits, branch}) {
+  console.log("Total credits: ", totalCredits);
   if (branch === "Electrical Engg" && totalCredits >= 175) {
-    return true;
+    return [true, 'Well Done, Total Credits Checked: '+totalCredits];
   } else if (totalCredits >= 170) {
-    return true;
+    return [true, 'Well Done, Total Credits Checked: '+totalCredits];
   }
-  return false;
+  return [false, 'Failed Check, Total Credits Checked: '+totalCredits];
 }
 
 
-function HSSCREDITSCHECK({totalHSECredits})
+function HSSCREDITSCHECK(totalHSECredits)
 {
-    if (totalHSECredits >= 32)
-    {
-        return true;
-    }
-    return false;
+  console.log("HSS credits: ", totalHSECredits);
+  if (totalHSECredits >= 32)
+  {
+    return [true, 'Well Done, Total HSS Credits Checked: '+totalHSECredits];
+  }
+  return [false, 'Failed Check, Total HSS Credits Checked: '+totalHSECredits];
 }
 
-function BSECREITSCHECK({totalBSEcredits})
+function BSECREITSCHECK(totalBSEcredits)
 {
+  console.log("BSE credits: ", totalBSEcredits);
     if (totalBSEcredits >= 40)
     {
-        return true;
+      return [true, 'Well Done, Total BS Credits Checked: '+totalBSEcredits];
     }
-    return false;
+    return [false, 'Failed Check, Total Credits Checked: '+totalBSEcredits];
 }
 
-function OPENCREDITSCHECK({totalOPCredits})
+function OPENCREDITSCHECK(totalOPCredits)
 {
+    console.log("Total open elective credits: ", totalOPCredits);
     if (totalOPCredits >= 16)
     {
-        return true;
+      return [true, 'Well Done, Total Open Elective Credits Checked: '+totalOPCredits];
     }
-    return false;
-}
-
-function DISCIPLINECREDITSCHECK({totalDisciplineCredits})
-{
-    if (totalDisciplineCredits >= 48)
-    {
-        return true;
-    }
-    return false;
-}
-
-function ESCREDITSCHECK({totalES})
-{
-    if (totalES === 100)
-    {
-        return true;
-    }
-    return false;
-}
-
-function OTHERCREDITSCHECK({totalOtherCredits})
-{
-  if (totalOtherCredits >= 5)
-  {
-    return true;
+    return [false, 'Failed Check, Total Open Elective Credits Checked: '+totalOPCredits];
   }
-  return false;
+  
+  function DISCIPLINECREDITSCHECK(totalDisciplineCredits)
+  {
+  console.log("Discripline specific credits: ", totalDisciplineCredits);
+  if (totalDisciplineCredits >= 48)
+  {
+    return [true, 'Well Done, Total Discipline Credits Checked: '+totalDisciplineCredits];
+  }else{
+    return [false, 'Failed Check, Total Discipline Credits Checked: '+totalDisciplineCredits];
+  }
+}
+
+function ESCREDITSCHECK(val)
+{
+  console.log("ES credits: ", val);
+  if (val >= 28)
+  {
+    return [true, 'Well Done, Total ES Credits Checked: '+val];
+  }
+  return [false, 'Failed Check, Total ES Credits Checked: '+val];
+}
+
+function OTHERCREDITSCHECK(val)
+{
+  console.log("Other credits: ", val);
+  if (val >= 5)
+  {
+    return [true, 'Well Done, Total Other Credits Checked: '+val];
+  }
+  return [true, 'Failed Check, Total ES Credits Checked: '+val];
 }
 
 module.exports = {
-  ExtractMainData,
-  totalCreditsCheck,
-  HSSCREDITSCHECK,
-  BSECREITSCHECK,
-  OPENCREDITSCHECK,
-  DISCIPLINECREDITSCHECK,
-  ESCREDITSCHECK,
-  OTHERCREDITSCHECK,
+  singleQuery
 };

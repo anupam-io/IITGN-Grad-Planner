@@ -5,7 +5,7 @@ import Semester from "../components/Semester";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import { ExtractMainData } from "./../services/contraints";
+import { singleQuery } from "./../services/contraints";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -14,7 +14,13 @@ class CreateNewPlan extends Component {
       mainData: [],
       term: "",
       semSum: [0, 0, 0, 0, 0, 0, 0, 0],
-      TC: ""
+      TC: [false, ""],
+      HS: [false, ""],
+      BS: [false, ""],
+      OP: [false, ""],
+      ES: [false, ""],
+      DS: [false, ""],
+      Other: [false, ""],
     };
     this.loadDeafaultSem();
   }
@@ -93,32 +99,23 @@ class CreateNewPlan extends Component {
     });
   };
 
-  checkContraint = async(e)=>{
-    if(e==="TC"){
-      let res = ExtractMainData(this.state.mainData, e);
-      console.log(res);
-    }
-    else if (e==="HSE")
-    {
-      let res = ExtractMainData(this.state.mainData, e);
-      console.log(res);
-    }
-    else if (e==="BSE")
-    {
-      let res = ExtractMainData(this.state.mainData, e);
-      console.log(res);
-    }
-    else if (e==="OPE")
-    {
-      let res = ExtractMainData(this.state.mainData, e);
-      console.log(res);
-    }
-    else if (e==="ALL")
-    {
-      let res = ExtractMainData(this.state.mainData, e);
-      console.log(res);
-    }
-  }
+  checkContraint = async (e) => {
+    console.log(e);
+    let res = await singleQuery(this.state.mainData, e);
+    console.log(res);
+  };
+
+  checkAll = async (e) => {
+    console.log("checkAll() called.");
+
+    await this.checkContraint("TC");
+    await this.checkContraint("HS");
+    await this.checkContraint("BS");
+    await this.checkContraint("OP");
+    await this.checkContraint("ES");
+    await this.checkContraint("DS");
+    await this.checkContraint("Other");
+  };
 
   render() {
     return (
@@ -179,7 +176,7 @@ class CreateNewPlan extends Component {
               <td>
                 <Button
                   variant="warning"
-                  onClick={()=>this.checkContraint("TC")}
+                  onClick={() => this.checkContraint("TC")}
                 >
                   Check
                 </Button>
@@ -195,12 +192,17 @@ class CreateNewPlan extends Component {
                 </div>
               </td>
               <td>
-                <Button variant="warning" onClick={()=>this.checkContraint("HSE")}>Check</Button>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("HS")}
+                >
+                  Check
+                </Button>
               </td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td>Total Open Electives</td>
+              <td>Total Open Electives Credits Check</td>
               <td>
                 <div class="alert alert-danger" role="alert">
                   <strong>Oh snap!</strong> Change a few things up and try
@@ -208,12 +210,17 @@ class CreateNewPlan extends Component {
                 </div>
               </td>
               <td>
-                <Button variant="warning" onClick={()=>this.checkContraint("OPE")}>Check</Button>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("OP")}
+                >
+                  Check
+                </Button>
               </td>
             </tr>
             <tr>
               <th scope="row">4</th>
-              <td>Total BS Electives</td>
+              <td>Total BS Credits Check</td>
               <td>
                 <div class="alert alert-danger" role="alert">
                   <strong>Oh snap!</strong> Change a few things up and try
@@ -221,12 +228,17 @@ class CreateNewPlan extends Component {
                 </div>
               </td>
               <td>
-                <Button variant="warning" onClick={()=>this.checkContraint("BSE")}>Check</Button>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("BS")}
+                >
+                  Check
+                </Button>
               </td>
             </tr>
             <tr>
-              <th scope="row">4</th>
-              <td>Total DisciplineCheck</td>
+              <th scope="row">5</th>
+              <td>Total ES Credits Check</td>
               <td>
                 <div class="alert alert-danger" role="alert">
                   <strong>Oh snap!</strong> Change a few things up and try
@@ -234,9 +246,53 @@ class CreateNewPlan extends Component {
                 </div>
               </td>
               <td>
-                <Button variant="warning" onClick={()=>this.checkContraint("BSE")}>Check</Button>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("ES")}
+                >
+                  Check
+                </Button>
               </td>
             </tr>
+
+            <tr>
+              <th scope="row">6</th>
+              <td>Total Discipline Specific Credits Check</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("DS")}
+                >
+                  Check
+                </Button>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">7</th>
+              <td>Total Other Credits Check</td>
+              <td>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Oh snap!</strong> Change a few things up and try
+                  submitting again.
+                </div>
+              </td>
+              <td>
+                <Button
+                  variant="warning"
+                  onClick={() => this.checkContraint("Other")}
+                >
+                  Check
+                </Button>
+              </td>
+            </tr>
+
             <tr>
               <th scope="row">{">"}</th>
               <td className="h4 py-auto">Graduation Status</td>
@@ -247,19 +303,13 @@ class CreateNewPlan extends Component {
                 </div>
               </td>
               <td>
-                <Button className="mt-auto px-4" onClick={()=>this.checkContraint("ALL")}>
-                  <strong>Check</strong>
+                <Button className="mt-auto px-4" onClick={this.checkAll}>
+                  <strong>Check All</strong>
                 </Button>
               </td>
             </tr>
           </tbody>
         </table>
-
-        <Button className="px-5">
-          <strong>
-            <h2>Check All</h2>
-          </strong>
-        </Button>
 
         <Row className="mt-5 p-2">
           <Col>

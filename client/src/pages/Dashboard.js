@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
-
 import PlanCard from "../components/PlanCard";
 import history from "../history";
 
-function Dashboard({ allPlans }) {
+const axios = require("axios");
+
+
+function Dashboard() {
+  let allPlans = [];
+  
+  const loadPlanNames = async()=>{
+    const endPoint = "/allPlans";
+    let ret = await axios.get(endPoint);
+    console.log(ret.data);
+    allPlans = ret.data;
+  };
+  // await loadPlanNames();
+  
+
   return (
     <div>
       <Container className="p-2">
