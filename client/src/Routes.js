@@ -5,10 +5,10 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import history from "./history";
 import CreateNewPlan from "./pages/CreateNewPlan";
-import Guidelines from './pages/Guidelines';
+import Guidelines from './components/Guidelines';
 import Home from './pages/Home'
 import NotFound from './pages/404';
-const axios = require("axios");
+import SharedPlan from "./pages/SharedPlan";
 
 function Routes() {
   return (
@@ -22,6 +22,7 @@ function Routes() {
         </Route>
         <Route path="/create-new-plan" component={CreateNewPlan}/>
         <Route path="/guidelines" component={Guidelines}/>
+        <Route path="/sharedPlan/:name" component={SharedPlan}/>
         <Route component={NotFound}/>
       </Switch>
     </Router>

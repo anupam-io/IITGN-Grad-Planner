@@ -7,6 +7,7 @@ import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import { singleQuery } from "./../services/contraints";
 import ConstraintMessage from "../components/ConstraintMessage";
+// import Sidebar from '../components/Sidebar';
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class CreateNewPlan extends Component {
     this.state = {
       mainData: [],
       term: "",
-      semSum: [0, 0, 0, 0, 0, 0, 0, 0],
+      semSum: [-1, -1, -1, -1, -1, -1],
       TC: [false, message],
       HS: [false, message],
       BS: [false, message],
@@ -23,7 +24,7 @@ class CreateNewPlan extends Component {
       ES: [false, message],
       DS: [false, message],
       Other: [false, message],
-      all: [false, message]
+      all: [false, message],
     };
     this.loadDeafaultSem();
   }
@@ -33,6 +34,7 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: res.data,
     });
+    this.updateSemSum();
     // alert("Default values loaded for CSE.");
   };
 
@@ -45,6 +47,7 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: temp,
     });
+    this.updateSemSum();
   };
 
   addCourse = async (sem) => {
@@ -55,6 +58,7 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: temp,
     });
+    this.updateSemSum();
   };
 
   deleteCourse = async (sem, courseIndex) => {
@@ -68,6 +72,7 @@ class CreateNewPlan extends Component {
 
     await this.setState({ mainData: [] });
     await this.setState({ mainData: temp });
+    this.updateSemSum();
   };
 
   saveMyPlan = async (e) => {
@@ -107,37 +112,50 @@ class CreateNewPlan extends Component {
     let res = await singleQuery(this.state.mainData, e);
     console.log(res);
 
-
-    if(e == "TC"){
+    if (e == "TC") {
       this.setState({
-        TC: res
-      })
-    } else if(e == "HS"){
+        TC: res,
+      });
+    } else if (e == "HS") {
       this.setState({
-        HS: res
-      })
-    } else if(e == "BS"){
+        HS: res,
+      });
+    } else if (e == "BS") {
       this.setState({
-        BS: res
-      })
-    } else if(e == "OP"){
+        BS: res,
+      });
+    } else if (e == "OP") {
       this.setState({
-        OP: res
-      })
-    } else if(e == "ES"){
+        OP: res,
+      });
+    } else if (e == "ES") {
       this.setState({
-        ES: res
-      })
-    } else if(e == "DS"){
+        ES: res,
+      });
+    } else if (e == "DS") {
       this.setState({
-        DS: res
-      })
-    } else if(e == "Other"){
+        DS: res,
+      });
+    } else if (e == "Other") {
       this.setState({
-        Other: res
-      })
-    } 
+        Other: res,
+      });
+    }
   };
+
+  updateSemSum = ()=>{
+    let arr = new Array(8);
+    for(let i=0;i<8;i++){
+      let temp = 0;
+      for(let j=0;j<this.state.mainData[i].length; j++){
+        temp+=parseInt(this.state.mainData[i][j][2])
+      }
+      arr[i] = temp;
+    }
+    this.setState({
+      semSum: arr
+    });
+  }
 
   checkAll = async (e) => {
     console.log("checkAll() called.");
@@ -150,222 +168,241 @@ class CreateNewPlan extends Component {
     await this.checkContraint("DS");
     await this.checkContraint("Other");
 
-    let allStatus = (this.state.TC[0] && this.state.HS[0] && this.state.BS[0] && this.state.OP[0] && this.state.ES[0] && this.state.DS[0] && this.state.Other[0])
-    if (allStatus){
-      this.setState({all: [true, "Well Done, You can graduate!!!"]});
-    }else{
-      this.setState({all: [false, "Oops, try again."]});
+    let allStatus =
+      this.state.TC[0] &&
+      this.state.HS[0] &&
+      this.state.BS[0] &&
+      this.state.OP[0] &&
+      this.state.ES[0] &&
+      this.state.DS[0] &&
+      this.state.Other[0];
+    if (allStatus) {
+      this.setState({ all: [true, "Well Done, You can graduate!!!"] });
+    } else {
+      this.setState({ all: [false, "Oops, try again."] });
     }
     console.log(allStatus);
   };
 
   render() {
     return (
-      <div style={{ textAlign: "center" }} className="App p-0">
-        <div style={{ margin: "50px" }}>
-          <h1>Guidelines for creating a successfull plan</h1>
-
-          <ul>
-            <li>
-              <h5>
-                Add all your first and second year courses as a "Compulsory"
-                type
-              </h5>
-            </li>
-            <li>
-              <h5>
-                You can check for individual constraints like HSS Electives
-                using the dropdown
-              </h5>
-            </li>
-          </ul>
+      <>
+        {/* <Sidebar/> */}
+        <div className="jumbotron display-4 text-center mb-0 py-3">
+          Edit Plan
         </div>
 
-        {this.state.mainData.map((value, index) => {
-          return (
-            <div className="my-4" key={index}>
-              <Semester
-                deleteCourse={this.deleteCourse}
-                number={index}
-                data={value}
-                updateMainData={this.updateMainData}
-                addCourse={this.addCourse}
-                sum={this.state.semSum[index]}
-              />
-            </div>
-          );
-        })}
+        <div style={{ textAlign: "center" }} className="App p-0">
+          {this.state.mainData.map((value, index) => {
+            return (
+              <div className="my-4" key={index}>
+                <Semester
+                  deleteCourse={this.deleteCourse}
+                  number={index}
+                  data={value}
+                  updateMainData={this.updateMainData}
+                  addCourse={this.addCourse}
+                  sum={this.state.semSum[index]}
+                />
+              </div>
+            );
+          })}
 
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col-2">#</th>
-              <th scope="col-8">Contraint</th>
-              <th scope="col-2">Status</th>
-              <th scope="col-2">Check</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Total credits check</td>
-              <td>
-                <ConstraintMessage message={this.state.TC[1]} value={this.state.TC[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("TC")}
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col-2">#</th>
+                <th scope="col-8">Contraint</th>
+                <th scope="col-2">Status</th>
+                <th scope="col-2">Check</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Total credits check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.TC[1]}
+                    value={this.state.TC[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("TC")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Total HS Electives courses</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.HS[1]}
+                    value={this.state.HS[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("HS")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Total Open Electives Credits Check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.OP[1]}
+                    value={this.state.OP[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("OP")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Total BS Credits Check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.BS[1]}
+                    value={this.state.BS[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("BS")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Total ES Credits Check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.ES[1]}
+                    value={this.state.ES[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("ES")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">6</th>
+                <td>Total Discipline Specific Credits Check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.DS[1]}
+                    value={this.state.DS[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("DS")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">7</th>
+                <td>Total Other Credits Check</td>
+                <td>
+                  <ConstraintMessage
+                    message={this.state.Other[1]}
+                    value={this.state.Other[0]}
+                  />
+                </td>
+                <td>
+                  <Button
+                    variant="warning"
+                    onClick={() => this.checkContraint("Other")}
+                  >
+                    Check
+                  </Button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">{">"}</th>
+                <td className="h4 py-auto">
+                  <strong> Graduation Status </strong>
+                </td>
+                <td>
+                  <strong>
+
+                  <ConstraintMessage
+                    message={this.state.all[1]}
+                    value={this.state.all[0]}
+                    />
+                    </strong>
+                </td>
+                <td>
+                  <Button className="mt-auto px-4" onClick={this.checkAll}>
+                    <strong>Check All</strong>
+                  </Button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <Row className="mt-5 p-2">
+            <Col>
+              <Form onSubmit={this.saveMyPlan}>
+                <Form.Group
+                  onChange={(e) => this.setTerm(e.target.value)}
+                  as={Col}
+                  controlId="formGridZip"
                 >
-                  Check
+                  <Form.Control />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Save Plan
                 </Button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Total HS Electives courses</td>
-              <td>
-              <ConstraintMessage message={this.state.HS[1]} value={this.state.HS[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("HS")}
+              </Form>
+            </Col>
+            <Col>
+              <Form onSubmit={this.loadMyPlan}>
+                <Form.Group
+                  onChange={(e) => this.setTerm(e.target.value)}
+                  as={Col}
+                  controlId="formGridZip"
                 >
-                  Check
+                  <Form.Control />
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                  Load Plan
                 </Button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Total Open Electives Credits Check</td>
-              <td>
-              <ConstraintMessage message={this.state.OP[1]} value={this.state.OP[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("OP")}
-                >
-                  Check
-                </Button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Total BS Credits Check</td>
-              <td>
-              <ConstraintMessage message={this.state.BS[1]} value={this.state.BS[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("BS")}
-                >
-                  Check
-                </Button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Total ES Credits Check</td>
-              <td>
-              <ConstraintMessage message={this.state.ES[1]} value={this.state.ES[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("ES")}
-                >
-                  Check
-                </Button>
-              </td>
-            </tr>
-
-            <tr>
-              <th scope="row">6</th>
-              <td>Total Discipline Specific Credits Check</td>
-              <td>
-              <ConstraintMessage message={this.state.DS[1]} value={this.state.DS[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("DS")}
-                >
-                  Check
-                </Button>
-              </td>
-            </tr>
-
-            <tr>
-              <th scope="row">7</th>
-              <td>Total Other Credits Check</td>
-              <td>
-              <ConstraintMessage message={this.state.Other[1]} value={this.state.Other[0]} />
-              </td>
-              <td>
-                <Button
-                  variant="warning"
-                  onClick={() => this.checkContraint("Other")}
-                >
-                  Check
-                </Button>
-              </td>
-            </tr>
-
-            <tr>
-              <th scope="row">{">"}</th>
-              <td className="h4 py-auto"><strong> Graduation Status </strong></td>
-              <td>
-              <ConstraintMessage message={this.state.all[1]} value={this.state.all[0]} />
-              </td>
-              <td>
-                <Button className="mt-auto px-4" onClick={this.checkAll}>
-                  <strong>Check All</strong>
-                </Button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-
-
-
-
-
-        <Row className="mt-5 p-2">
-          <Col>
-            <Form onSubmit={this.saveMyPlan}>
-              <Form.Group
-                onChange={(e) => this.setTerm(e.target.value)}
-                as={Col}
-                controlId="formGridZip"
-              >
-                <Form.Control />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Save Plan
-              </Button>
-            </Form>
-          </Col>
-          <Col>
-            <Form onSubmit={this.loadMyPlan}>
-              <Form.Group
-                onChange={(e) => this.setTerm(e.target.value)}
-                as={Col}
-                controlId="formGridZip"
-              >
-                <Form.Control />
-              </Form.Group>
-
-              <Button variant="primary" type="submit">
-                Load Plan
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </div>
+              </Form>
+            </Col>
+          </Row>
+        </div>
+      </>
     );
   }
 }

@@ -77,7 +77,16 @@ function SingleCourse(props) {
               paramName="message"
               type="number"
               change={(e) => changeCredit(e.message)}
-              validate={(e) => isNaN(e) === false}
+              validate={(e) => {
+                if(isNaN(e)){
+                  return false;
+                }
+                if(e<0){
+                  return false;
+                }
+                return true;
+              }
+            }
               style={{
                 display: "inline-block",
                 padding: 5,

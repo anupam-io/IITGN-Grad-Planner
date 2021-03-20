@@ -9,17 +9,17 @@ import loadMyPlan from "./../services/loadMyPlan";
 class SharedPlan extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
     // this.loadDeafaultSem();
 
     console.log(props);
   }
   render() {
-    return (<div>
-
-
-    </div>);
+    return (
+      <div>
+        <h2>{this.props.match.params.name}</h2>
+      </div>
+    );
   }
 }
 

@@ -5,7 +5,7 @@ function ConstraintMessage({message, value})
     if (value === true)
     {
     return (
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success p-1 m-0" role="alert">
             {message}
         </div>
     );
@@ -13,7 +13,7 @@ function ConstraintMessage({message, value})
     else 
     {
         return (
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger p-1 m-0" role="alert">
                 {message}
             </div>
         );

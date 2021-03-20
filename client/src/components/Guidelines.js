@@ -15,8 +15,6 @@ function Guidelines()
                         <h4>You can check for individual constraints like HSS Electives using individual buttons</h4>
                     </li>
                 </ul>
-
-
             </Container>
         </div>
     );
