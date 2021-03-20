@@ -33,7 +33,6 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: res.data,
     });
-    await this.checkAll();
     // alert("Default values loaded for CSE.");
   };
 
@@ -89,7 +88,7 @@ class CreateNewPlan extends Component {
     let res = await loadMyPlan(this.state.term);
     if (res.data.status) {
       await this.setState({
-        mainData: res.data.data,
+        mainData: res.data.data[0],
       });
       alert("Plan loaded as: " + this.state.term);
     } else {
@@ -345,7 +344,7 @@ class CreateNewPlan extends Component {
               >
                 <Form.Control />
               </Form.Group>
-              <Button disabled variant="primary" type="submit">
+              <Button variant="primary" type="submit">
                 Save Plan
               </Button>
             </Form>
@@ -360,7 +359,7 @@ class CreateNewPlan extends Component {
                 <Form.Control />
               </Form.Group>
 
-              <Button disabled variant="primary" type="submit">
+              <Button variant="primary" type="submit">
                 Load Plan
               </Button>
             </Form>
