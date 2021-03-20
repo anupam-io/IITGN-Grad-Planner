@@ -38,7 +38,7 @@ class CreateNewPlan extends Component {
   }
 
   loadDeafaultSem = async () => {
-    let res = await axios.get(`/defsem`);
+    let res = await axios.get(`https://cryptic-bayou-91116.herokuapp.com/defsem`);
     await this.setState({
       mainData: res.data,
     });

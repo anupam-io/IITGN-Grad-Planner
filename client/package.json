@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://cryptic-bayou-91116.herokuapp.com",
   "dependencies": {
     "atomize": "^1.0.26",
     "axios": "^0.19.0",

@@ -1,5 +1,5 @@
 const axios = require("axios");
-const endPoint = "/savePlan";
+const endPoint = "https://cryptic-bayou-91116.herokuapp.com/savePlan";
 
 export default async  function saveMyPlan(name, data){
   let val;
