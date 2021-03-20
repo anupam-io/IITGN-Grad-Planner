@@ -20,7 +20,7 @@ function Semester(props) {
 
       <div className="row">
         <div className="col-1" style={{ margin: "auto" }}>
-          <strong className="display-4">{props.sum}</strong>
+          <strong className="h1">{props.sum}</strong>
         </div>
 
         <div className="row col-10">

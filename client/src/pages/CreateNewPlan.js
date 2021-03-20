@@ -14,8 +14,7 @@ import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import singleQuery from './../services/contraints';
 import ConstraintMessage from "../components/ConstraintMessage";
-// import Sidebar from "../components/Sidebar";
-import ShareLink from './ShareLink';
+import Guidelines from "../components/Guidelines";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -202,6 +201,7 @@ class CreateNewPlan extends Component {
   render() {
     return (
       <div>
+        <Guidelines/>
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
@@ -452,7 +452,6 @@ class CreateNewPlan extends Component {
               </Form>
             </Col>
             <Col>
-            <ShareLink/>
             </Col>
           </Row>
         </div>
