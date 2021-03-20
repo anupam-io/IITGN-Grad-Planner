@@ -18,6 +18,16 @@ module.exports = (app) => {
     return res.status(200).send(ret);
   });
 
+  app.get(`/allPlans`, async (req, res) => {
+    console.log("allPlans() query");
+    ret = await Plans.find({});
+    f = []
+    for(i=0;i<ret.length;i++){
+      f.push(ret[i].name);
+    }
+    return res.status(200).send(f);
+  });
+
   app.get(`/defsem`, async (req, res) => {
     console.log("defsem request.");
     let data = await DefaultSem.find({});
