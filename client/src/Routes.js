@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import NotFound from './pages/404';
 import SharedPlan from "./pages/SharedPlan";
 import ShareLink from "./pages/ShareLink";
+import Developers from './pages/Developers';
 
 function Routes() {
   return (
@@ -25,6 +26,7 @@ function Routes() {
         <Route path="/guidelines" component={Guidelines}/>
         <Route path="/sharedPlan/:name" component={SharedPlan}/>
         <Route path="/gen-share-link" component={ShareLink}/>
+        <Route path="/devs" component={Developers}/>
         <Route component={NotFound}/>
       </Switch>
     </Router>

@@ -23,6 +23,9 @@ function Navigation() {
           <Nav.Link style={{ color: "white" }} href="/gen-share-link">
             Generate Sharelable Link
           </Nav.Link>
+          <Nav.Link style={{ color: "white" }} href="/devs">
+            Developers
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
       <Form inline>
