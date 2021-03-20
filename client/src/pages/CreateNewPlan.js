@@ -6,21 +6,24 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import { singleQuery } from "./../services/contraints";
+import ConstraintMessage from "../components/ConstraintMessage";
 
 class CreateNewPlan extends Component {
   constructor() {
     super();
+    let message = "Not Checked!";
     this.state = {
       mainData: [],
       term: "",
       semSum: [0, 0, 0, 0, 0, 0, 0, 0],
-      TC: [false, ""],
-      HS: [false, ""],
-      BS: [false, ""],
-      OP: [false, ""],
-      ES: [false, ""],
-      DS: [false, ""],
-      Other: [false, ""],
+      TC: [false, message],
+      HS: [false, message],
+      BS: [false, message],
+      OP: [false, message],
+      ES: [false, message],
+      DS: [false, message],
+      Other: [false, message],
+      all: [false, message]
     };
     this.loadDeafaultSem();
   }
@@ -30,6 +33,7 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: res.data,
     });
+    await this.checkAll();
     // alert("Default values loaded for CSE.");
   };
 
@@ -103,6 +107,37 @@ class CreateNewPlan extends Component {
     console.log(e);
     let res = await singleQuery(this.state.mainData, e);
     console.log(res);
+
+
+    if(e == "TC"){
+      this.setState({
+        TC: res
+      })
+    } else if(e == "HS"){
+      this.setState({
+        HS: res
+      })
+    } else if(e == "BS"){
+      this.setState({
+        BS: res
+      })
+    } else if(e == "OP"){
+      this.setState({
+        OP: res
+      })
+    } else if(e == "ES"){
+      this.setState({
+        ES: res
+      })
+    } else if(e == "DS"){
+      this.setState({
+        DS: res
+      })
+    } else if(e == "Other"){
+      this.setState({
+        Other: res
+      })
+    } 
   };
 
   checkAll = async (e) => {
@@ -115,6 +150,14 @@ class CreateNewPlan extends Component {
     await this.checkContraint("ES");
     await this.checkContraint("DS");
     await this.checkContraint("Other");
+
+    let allStatus = (this.state.TC[0] && this.state.HS[0] && this.state.BS[0] && this.state.OP[0] && this.state.ES[0] && this.state.DS[0] && this.state.Other[0])
+    if (allStatus){
+      this.setState({all: [true, "Well Done, You can graduate!!!"]});
+    }else{
+      this.setState({all: [false, "Oops, try again."]});
+    }
+    console.log(allStatus);
   };
 
   render() {
@@ -168,10 +211,7 @@ class CreateNewPlan extends Component {
               <th scope="row">1</th>
               <td>Total credits check</td>
               <td>
-                <div class="alert alert-success" role="alert">
-                  <strong>Well done!</strong> You successfully read this
-                  important alert message.
-                </div>
+                <ConstraintMessage message={this.state.TC[1]} value={this.state.TC[0]} />
               </td>
               <td>
                 <Button
@@ -186,10 +226,7 @@ class CreateNewPlan extends Component {
               <th scope="row">2</th>
               <td>Total HS Electives courses</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.HS[1]} value={this.state.HS[0]} />
               </td>
               <td>
                 <Button
@@ -204,10 +241,7 @@ class CreateNewPlan extends Component {
               <th scope="row">3</th>
               <td>Total Open Electives Credits Check</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.OP[1]} value={this.state.OP[0]} />
               </td>
               <td>
                 <Button
@@ -222,10 +256,7 @@ class CreateNewPlan extends Component {
               <th scope="row">4</th>
               <td>Total BS Credits Check</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.BS[1]} value={this.state.BS[0]} />
               </td>
               <td>
                 <Button
@@ -240,10 +271,7 @@ class CreateNewPlan extends Component {
               <th scope="row">5</th>
               <td>Total ES Credits Check</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.ES[1]} value={this.state.ES[0]} />
               </td>
               <td>
                 <Button
@@ -259,10 +287,7 @@ class CreateNewPlan extends Component {
               <th scope="row">6</th>
               <td>Total Discipline Specific Credits Check</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.DS[1]} value={this.state.DS[0]} />
               </td>
               <td>
                 <Button
@@ -278,10 +303,7 @@ class CreateNewPlan extends Component {
               <th scope="row">7</th>
               <td>Total Other Credits Check</td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.Other[1]} value={this.state.Other[0]} />
               </td>
               <td>
                 <Button
@@ -295,12 +317,9 @@ class CreateNewPlan extends Component {
 
             <tr>
               <th scope="row">{">"}</th>
-              <td className="h4 py-auto">Graduation Status</td>
+              <td className="h4 py-auto"><strong> Graduation Status </strong></td>
               <td>
-                <div class="alert alert-danger" role="alert">
-                  <strong>Oh snap!</strong> Change a few things up and try
-                  submitting again.
-                </div>
+              <ConstraintMessage message={this.state.all[1]} value={this.state.all[0]} />
               </td>
               <td>
                 <Button className="mt-auto px-4" onClick={this.checkAll}>
@@ -310,6 +329,11 @@ class CreateNewPlan extends Component {
             </tr>
           </tbody>
         </table>
+
+
+
+
+
 
         <Row className="mt-5 p-2">
           <Col>
