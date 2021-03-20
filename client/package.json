@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5000",
+  "proxy": "https://vast-eyrie-23753.herokuapp.com",
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.6.0",
