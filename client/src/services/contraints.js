@@ -34,11 +34,11 @@ function ExtractMainData(MainData){
   return [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits];
 }
 
-function singleQuery(mainData, keyword) {
+function singleQuery(mainData, keyword, branch){
   const [totalCredits, HSECredits, BSECredits, OPCredits, DisciplineCredits, ESCredits, OtherCredits] = ExtractMainData(mainData);
 
   if (keyword === "TC") {
-    return totalCreditsCheck({ totalCredits, branch: "CSE" });
+    return totalCreditsCheck({ totalCredits, branch: branch });
   }
   else if (keyword === "HS")
   {
@@ -69,8 +69,12 @@ function singleQuery(mainData, keyword) {
 
 function totalCreditsCheck({ totalCredits, branch}) {
   console.log("Total credits: ", totalCredits);
-  if (branch === "Electrical Engg" && totalCredits >= 175) {
-    return [true, 'Well Done, Total Credits Checked: '+totalCredits];
+  if (branch === "Electrical Engg" ) {
+    if (totalCredits >= 175)
+    {
+      return [true, 'Well Done, Total Credits Checked: '+totalCredits];
+    }
+    return [false, 'Failed Check, Total Credits Checked: '+totalCredits];
   } else if (totalCredits >= 170) {
     return [true, 'Well Done, Total Credits Checked: '+totalCredits];
   }

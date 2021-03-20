@@ -117,7 +117,7 @@ class CreateNewPlan extends Component {
 
   checkContraint = async (e) => {
     console.log(e);
-    let res = await singleQuery(this.state.mainData, e);
+    let res = await singleQuery(this.state.mainData, e, this.state.branch);
     console.log(res);
 
     if (e === "TC") {
@@ -234,7 +234,7 @@ class CreateNewPlan extends Component {
         </div>
 
         <div>
-          {/* <div style={{ textAlign: "center" }} className="App p-0">
+          <div style={{ textAlign: "center" }} className="App p-0">
             {this.state.mainData.map((value, index) => {
               return (
                 <div className="my-4" key={index}>
@@ -249,7 +249,7 @@ class CreateNewPlan extends Component {
                 </div>
               );
             })}
-          </div> */}
+          </div>
 
           <table class="table">
             <thead class="thead-dark">
@@ -430,7 +430,7 @@ class CreateNewPlan extends Component {
                 >
                   <Form.Control />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button class="center" variant="primary" type="submit">
                   Save Plan
                 </Button>
               </Form>
