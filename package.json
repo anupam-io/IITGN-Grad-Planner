@@ -1,17 +1,16 @@
 {
-  "name": "node-react-starter",
+  "name": "glanner",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "client": "cd client; yarn start;",
+    "client": "yarn --cwd client start",
     "server": "nodemon index.js",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
     "c": "node setAllCourses.js",
     "s": "node setDefaultSem.js",
-    "p": "node setPlans.js",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "test": "node API.test.js"
+    "p": "node setPlans.js"
   },
   "keywords": [],
   "author": "",

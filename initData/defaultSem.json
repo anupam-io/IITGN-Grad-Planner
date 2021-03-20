@@ -1,36 +1,63 @@
 [
-  {
-    "sem": "1",
-    "courses": ["FP 100", "MA 101", "ES 101", "ES 103", "LS 101", "PE 101"]
-  },
-  {
-    "sem": "2",
-    "courses": [
-      "HS 151",
-      "MA 102",
-      "ES 104",
-      "ES 105",
-      "ES 106",
-      "PH 101",
-      "CH 202",
-      "PE 102",
-      "FP 101"
-    ]
-  },
-  {
-    "sem": "3",
-    "courses": ["HS 211", "MA 201", "ES 201", "ES 203", "ES 242", "CH 201", "PH 102"]
-  },
-  {
-    "sem": "4",
-    "courses": ["MA 202", "ES 301", "CS 322", "ES 202", "ES 215"]
-  },
-  {
-    "sem": "5",
-    "courses": ["CS 301", "CS 302"]
-  },
-  {
-    "sem": "6",
-    "courses": ["CS 327", "CS 328"]
-  }
+  [
+    ["Foundation Programme*", "FP 100", "4", "Compulsory"], 
+    ["HS Course", "HS 101", "4", "Compulsory"], 
+    ["Life Science", "LS 101", "4", "Compulsory"], 
+    ["Mathematics I", "MA 101", "4", "Compulsory"], 
+    ["Engineering Graphics", "ES 101", "4", "Compulsory"], 
+    ["Advanced Computing", "ES 112", "4", "Compulsory"], 
+    ["Introduction to Electrical systems", "ES 103", "4", "Compulsory"], 
+    ["Physical education", "PH 101", "4", "Compulsory"]
+  ],
+  [
+    ["Economics", "HS 151", "4", "Compulsory"],
+    ["Maths", "MA 102", "4", "Compulsory"],
+    ["Digital and Analog", "ES 104", "4", "Compulsory"],
+    ["Electronics Lab", "ES 105", "4", "Compulsory"],
+    ["Manufacturing Workshop", "ES 106", "4", "Compulsory"],
+    ["Electricity and Magnetism", "PH 101", "4", "Compulsory"],
+    ["Chemistry", "CH 202", "4", "Compulsory"],
+    ["Intro to Engineering", "FP 102", "1", "Other"]
+  ],
+  [
+    ["Introduction to Philosophy", "HS 221", "4", "Compulsory"],
+    ["Mathematics II", "MA 201", "4", "Compulsory"],
+    ["Chemistry", "CH 201", "4", "Compulsory"],
+    ["Intro to design & innovation", "ES 201", "4", "Compulsory"],
+    ["Digital Systems", "ES 203", "4", "Compulsory"],
+    ["Data structures and algorithms", "ES 242", "3", "Compulsory"],
+    ["General Chemistry", "CH 201", "4", "Compulsory"],
+    ["Physics Lab", "PH 102", "2", "Compulsory"]
+  ],
+  [
+    ["World Civilization", "HS 201", "4", "Compulsory"],
+    ["Maths", "MA 202", "4", "Compulsory"],
+    ["Data Structure - II", "ES 301", "4", "Discipline Specific"],
+    ["Discrete Maths", "CS 322", "4", "Discipline Specific"],
+    ["Computer Organization and Architecture", "ES 2XX", "4", "Discipline Specific"],
+    ["Intro to Material Science", "ES 202", "4", "Compulsory"]
+  ],
+  [
+    ["Some HSS Course", "HS XXX", "4", "Compulsory"],
+    ["Theory of Computing", "CS 302", "4", "Compulsory"],
+    ["Operating Systems", "CS 301", "5", "Compulsory"],
+    ["My Extended core", "CS XXX", "4", "Compulsory"],
+    ["My Basic Elective Course", "BS XXX", "4", "Compulsory"]
+  ],
+  [
+    ["Sanskrit Course", "HS 456", "4", "HSE"],
+    ["Urdu Scripts & Poetry", "HS 101", "4", "HSE"],
+    ["Intro to Data Science", "CS 604", "4", "Discipline Specific"],
+    ["Compilers", "CS XXX", "4", "Discipline Specific"],
+    ["Machine Learning", "ES 654", "4", "Discipline Specific"],
+    ["Databases", "CS 432", "4", "Discipline Specific"]
+  ],
+  [
+    ["My HS elective course", "HS XXX", "4", "HSE"],
+    ["My Basic Elective Course", "BS XXX", "4", "Compulsory"]
+  ],
+  [
+    ["My HS elective course", "HS XXX", "4", "HSE"],
+    ["My Basic Elective Course", "BS XXX", "4", "Compulsory"]
+  ]
 ]

@@ -29,25 +29,8 @@ module.exports = (app) => {
 
   app.get(`/defsem`, async (req, res) => {
     console.log("defsem request.");
-    let data = await DefaultSem.find({});
-    bigObject = [];
-
-    for (i = 0; i < data.length; i++) {
-      temp = [];
-      for (j = 0; j < data[i].courses.length; j += 1) {
-        const query = await Courses.findOne({ id: data[i].courses[j] });
-        if (query != null) {
-          temp.push([query["id"], query["name"], query["credits"], "Other"]);
-        } else {
-          temp.push([data[i].courses[j], "", "4", "Other"]);
-        }
-      }
-      bigObject.push(temp);
-    }
-    bigObject.push([]);
-    bigObject.push([]);
-
-    return res.status(200).send(bigObject);
+    const data = require("./../initData/defaultSem.json");
+    return res.status(200).send(data);
   });
 
   app.post(`/savePlan`, async (req, res) => {

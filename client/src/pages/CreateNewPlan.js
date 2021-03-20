@@ -23,7 +23,7 @@ class CreateNewPlan extends Component {
     await this.setState({
       mainData: res.data,
     });
-    alert("Default values loaded for CSE.");
+    // alert("Default values loaded for CSE.");
   };
 
   updateMainData = async(attr, sem, course, val) => {

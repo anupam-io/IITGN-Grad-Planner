@@ -9,7 +9,7 @@ function Dashboard({allPlans})
 {
     return (
         <div className="jumbotron">
-            <Container className="p-4">
+            <Container className="p-2">
                 <h4 className="center">Add new plan</h4>
                 <Form>
                     <Button variant="primary" onClick={() => history.push('/create-new-plan')}>Add new plan</Button>
