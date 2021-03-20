@@ -95,15 +95,15 @@ function SingleCourse(props) {
             onSelect={changeType}
           >
             <div className="bg-secondary">
-              <Dropdown.Item eventKey="HSE">HSE</Dropdown.Item>
-              <Dropdown.Item eventKey="BSE">BSE</Dropdown.Item>
+              <Dropdown.Item eventKey="HS">HS</Dropdown.Item>
+              <Dropdown.Item eventKey="BS">BS</Dropdown.Item>
               <Dropdown.Item eventKey="Open Elective">
                 Open Elective
               </Dropdown.Item>
               <Dropdown.Item eventKey="Discipline Specific">
                 Discipline Specific
               </Dropdown.Item>
-              <Dropdown.Item eventKey="Compulsory">Compulsory</Dropdown.Item>
+              <Dropdown.Item eventKey="ES">ES</Dropdown.Item>
               <Dropdown.Item eventKey="Other">Other</Dropdown.Item>
             </div>
           </DropdownButton>

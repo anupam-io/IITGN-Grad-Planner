@@ -24,6 +24,7 @@ module.exports = (app) => {
     for (i = 0; i < ret.length; i++) {
       f.push(ret[i].name);
     }
+    console.log(f);
     return res.status(200).send(f);
   });
 

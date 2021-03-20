@@ -1,8 +1,8 @@
 [
   [
-    ["Foundation Programme*", "FP 100", "4", "Compulsory"], 
-    ["HS Course", "HS 101", "4", "Compulsory"], 
-    ["Life Science", "LS 101", "4", "Compulsory"], 
+    ["Foundation Programme*", "FP 100", "4", "Other"], 
+    ["HS Course", "HS 101", "4", "HS"], 
+    ["Life Science", "LS 101", "4", "BS"], 
     ["Mathematics I", "MA 101", "4", "Compulsory"], 
     ["Engineering Graphics", "ES 101", "4", "Compulsory"], 
     ["Advanced Computing", "ES 112", "4", "Compulsory"], 
