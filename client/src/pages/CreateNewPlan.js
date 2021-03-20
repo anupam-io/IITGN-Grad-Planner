@@ -5,7 +5,7 @@ import Semester from "../components/Semester";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import {ExtractMainData} from "./../services/contraints";
+import { ExtractMainData } from "./../services/contraints";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class CreateNewPlan extends Component {
       mainData: [],
       term: "",
       semSum: [0, 0, 0, 0, 0, 0, 0, 0],
+      TC: ""
     };
     this.loadDeafaultSem();
   }
@@ -92,15 +93,37 @@ class CreateNewPlan extends Component {
     });
   };
 
+  checkContraint = async(e)=>{
+    if(e=="TC"){
+      
+      let res = ExtractMainData(this.state.mainData, "TC");
+      console.log(res);
+    }
+  }
+
   render() {
     return (
       <div style={{ textAlign: "center" }} className="App p-0">
-        <div className="jumbotron">
-          <div className="display-1">Graduation Planner</div>
-          <h3 className="lead">You graduation in your hands</h3>
+        <div style={{ margin: "50px" }}>
+          <h1>Guidelines for creating a successfull plan</h1>
+
+          <ul>
+            <li>
+              <h5>
+                Add all your first and second year courses as a "Compulsory"
+                type
+              </h5>
+            </li>
+            <li>
+              <h5>
+                You can check for individual constraints like HSS Electives
+                using the dropdown
+              </h5>
+            </li>
+          </ul>
         </div>
 
-        {/* {this.state.mainData.map((value, index) => {
+        {this.state.mainData.map((value, index) => {
           return (
             <div className="my-4" key={index}>
               <Semester
@@ -113,7 +136,7 @@ class CreateNewPlan extends Component {
               />
             </div>
           );
-        })} */}
+        })}
 
         <table class="table">
           <thead class="thead-dark">
@@ -134,7 +157,14 @@ class CreateNewPlan extends Component {
                   important alert message.
                 </div>
               </td>
-              <td><Button variant="warning" onClick={() =>ExtractMainData(this.state.mainData, "TC")}>Check</Button></td>
+              <td>
+                <Button
+                  variant="warning"
+                  onClick={()=>this.checkContraint("TC")}
+                >
+                  Check
+                </Button>
+              </td>
             </tr>
             <tr>
               <th scope="row">2</th>
@@ -145,7 +175,9 @@ class CreateNewPlan extends Component {
                   submitting again.
                 </div>
               </td>
-              <td><Button variant="warning">Check</Button></td>
+              <td>
+                <Button variant="warning">Check</Button>
+              </td>
             </tr>
             <tr>
               <th scope="row">3</th>
@@ -156,9 +188,9 @@ class CreateNewPlan extends Component {
                   submitting again.
                 </div>
               </td>
-              <td><Button variant="warning">Check</Button></td>
-              
-              
+              <td>
+                <Button variant="warning">Check</Button>
+              </td>
             </tr>
             <tr>
               <th scope="row">4</th>
@@ -169,8 +201,9 @@ class CreateNewPlan extends Component {
                   submitting again.
                 </div>
               </td>
-              <td><Button variant="warning">Check</Button></td>
-
+              <td>
+                <Button variant="warning">Check</Button>
+              </td>
             </tr>
             <tr>
               <th scope="row">{">"}</th>
@@ -181,13 +214,20 @@ class CreateNewPlan extends Component {
                   submitting again.
                 </div>
               </td>
-              <td><Button className="mt-auto px-4"><strong>Check</strong></Button></td>
-
+              <td>
+                <Button className="mt-auto px-4">
+                  <strong>Check</strong>
+                </Button>
+              </td>
             </tr>
           </tbody>
         </table>
 
-        <Button className="px-5"><strong><h2>Check All</h2></strong></Button>
+        <Button className="px-5">
+          <strong>
+            <h2>Check All</h2>
+          </strong>
+        </Button>
 
         <Row className="mt-5 p-2">
           <Col>

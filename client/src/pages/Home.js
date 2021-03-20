@@ -1,11 +1,18 @@
 import React from "react";
-import "../App.css"
+import "../App.css";
+import { Container } from "react-bootstrap";
 
 function Home() {
   return (
-    <div className="jumbotron" style={{marginLeft: "20em", marginRight: "20em", marginTop: "2em"}}>
-      <div className="display-3 text-center">
-      Welcome to the your hypothetical graduation.
+    <div>
+      <div
+        className="jumbotron display-3"
+        style={{
+          margin: "30px",
+          textAlign: "center"
+        }}
+      >
+        Welcome to the your graduation planner.
       </div>
     </div>
   );

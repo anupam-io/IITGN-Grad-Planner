@@ -6,20 +6,21 @@ var DisciplineCredits = 0;
 
 function ExtractMainData(MainData, keyword) {
   console.log("ExtractMainData() called with: ", keyword);
-    for (let sem = 0; sem < MainData.length; sem += 1) {
-    for (let courses = 0; courses < sem.length; courses += 1) {
-      totalCredits += MainData[sem[courses[2]]];
+  for (let sem = 0; sem < MainData.length; sem += 1) {
+    for (let courses = 0; courses < MainData[sem].length; courses += 1) {
+      totalCredits += MainData[sem][courses][2];
+
       if (MainData[sem[courses[2]]] === "HSE") {
-        HSECredits += MainData[sem[courses[2]]];
+        HSECredits += MainData[sem][courses][2];
       }
       if (MainData[sem[courses[2]]] === "BSE") {
-        BSECredits += MainData[sem[courses[2]]];
+        BSECredits += MainData[sem][courses][2];
       }
       if (MainData[sem[courses[2]]] === "Compulsory") {
-        CompulsoryCredits += MainData[sem[courses[2]]];
+        CompulsoryCredits += MainData[sem][courses][2];
       }
       if (MainData[sem[courses[2]]] === "Discipline Specific") {
-        DisciplineCredits += MainData[sem[courses[2]]];
+        DisciplineCredits += MainData[sem][courses][2];
       }
     }
   }
@@ -38,10 +39,9 @@ function totalCreditsCheck({ totalCredits, branch }) {
   return false;
 }
 
-
 module.exports = {
-    ExtractMainData
-}
+  ExtractMainData,
+};
 // function HSECoursesCheck({totalHSECredits})
 // {
 //     if (totalHSECredits >= 16)

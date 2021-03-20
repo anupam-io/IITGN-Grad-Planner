@@ -1,35 +1,36 @@
+import React from "react";
+import { Container, Button, Form, Row } from "react-bootstrap";
 
-import React from 'react';
-import {Container, Button, Form} from 'react-bootstrap';
+import PlanCard from "../components/PlanCard";
+import history from "../history";
 
-import PlanCard from '../components/PlanCard';
-import history from '../history';
+function Dashboard({ allPlans }) {
+  return (
+    <div>
+      <Container className="p-2">
+        
+        
 
-function Dashboard({allPlans})
-{
-    return (
-        <div className="jumbotron">
-            <Container className="p-2">
-                <h4 className="center">Add new plan</h4>
-                <Form>
-                    <Button variant="primary" onClick={() => history.push('/create-new-plan')}>Add new plan</Button>
-                </Form>
-            </Container>
+        <div className="column">
 
-            <Container className="p-4">
-            <h4 className="center">Check out all your plans below</h4>
-            <Container>
-                {
-                    allPlans.map( function (plan, index) {
-                        return (
-                            <PlanCard key={index} index={index}/>
-                        );
-                    })
-                }
-            </Container>
-            </Container>
+        <Row>
+          <div className="display-3">Your Plans</div>
+          <Button
+            variant="primary"
+            onClick={() => history.push("/create-new-plan")}
+          >
+            Add new plan
+          </Button>
+
+        </Row>
+          
+          {allPlans.map(function (plan, index) {
+            return <PlanCard key={index} index={index} />;
+          })}
         </div>
-    );
+      </Container>
+    </div>
+  );
 }
 
 export default Dashboard;
