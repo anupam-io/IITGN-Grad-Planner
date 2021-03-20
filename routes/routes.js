@@ -18,6 +18,8 @@ module.exports = (app) => {
     return res.status(200).send(ret);
   });
 
+  
+
   app.get(`/allPlans`, async (req, res) => {
     console.log("allPlans() query");
     ret = await Plans.find({});
