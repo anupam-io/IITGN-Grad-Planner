@@ -1,23 +1,45 @@
 import React, { Component } from "react";
-import axios from "axios";
-
-import Semester from "../components/Semester";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 
 class SharedPlan extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    // this.loadDeafaultSem();
-
-    console.log(props);
+    this.state = {
+      mainData: null,
+      statusMessage: null,
+    };
+    this.load();
   }
+
+  async load() {
+    let res = await loadMyPlan(this.props.match.params.name);
+    if (res.data.status) {
+      await this.setState({
+        mainData: res.data.data[0],
+      });
+    } else {
+      await this.setState({
+        statusMessage: (
+          <div
+            class="alert alert-danger text-center p-5 display-3"
+            role="alert"
+          >
+            Sorry! Plan not found.
+            <br /> Contact admin.
+          </div>
+        ),
+      });
+    }
+  }
+
   render() {
     return (
       <div>
-        <h2>{this.props.match.params.name}</h2>
+        <div className="jumbotron display-4 text-center">
+          Plan: {this.props.match.params.name}
+        </div>
+        <div>{this.state.statusMessage}</div>
+        <div>{this.state.mainData}</div>
       </div>
     );
   }
