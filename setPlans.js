@@ -19,7 +19,9 @@ const courses = mongoose.model("plans", planSchema);
 // Adding and deleting
 async function main() {
   // Resetting the document
-  await courses.deleteMany({});
+  // await courses.deleteOne({
+  //   name: ""
+  // });
 
   // Addign a plan
   await courses.create({

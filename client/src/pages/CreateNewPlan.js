@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 import Semester from "../components/Semester";
 import {
   Form,
   Button,
   Col,
-  Row,
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
-import singleQuery from './../services/contraints';
+import singleQuery from "./../services/contraints";
 import ConstraintMessage from "../components/ConstraintMessage";
 import Guidelines from "../components/Guidelines";
+import loadDefaultSem from "../services/loadDefaultSem";
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -22,7 +21,8 @@ class CreateNewPlan extends Component {
     let message = "Not Checked!";
     this.state = {
       mainData: [],
-      term: "",
+      Sterm: "",
+      Lterm: "",
       semSum: [-1, -1, -1, -1, -1, -1],
       TC: [false, message],
       HS: [false, message],
@@ -38,12 +38,12 @@ class CreateNewPlan extends Component {
   }
 
   loadDeafaultSem = async () => {
-    let res = await axios.get(`https://cryptic-bayou-91116.herokuapp.com/defsem`);
+    let data = await loadDefaultSem();
     await this.setState({
-      mainData: res.data,
+      mainData: data,
     });
     this.updateSemSum();
-    // alert("Default values loaded for CSE.");
+    alert("Default values loaded for CSE.");
   };
 
   updateMainData = async (attr, sem, course, val) => {
@@ -85,33 +85,42 @@ class CreateNewPlan extends Component {
 
   saveMyPlan = async (e) => {
     e.preventDefault();
-    console.log("Saving as: ", this.state.term);
+    console.log("Saving as: ", this.state.Sterm);
 
     console.log("Data=>>", this.state.mainData);
 
-    let res = await saveMyPlan(this.state.term, this.state.mainData);
+    let res = await saveMyPlan(this.state.Sterm, this.state.mainData);
     console.log(res);
-    alert("Plan saved as: " + this.state.term + "Go to Dashboard to Share your Plan");
+    alert(
+      "Plan saved as: " +
+        this.state.Sterm +
+        "Go to Dashboard to Share your Plan"
+    );
   };
 
   loadMyPlan = async (e) => {
     e.preventDefault();
 
-    console.log("Loading plan: ", this.state.term);
-    let res = await loadMyPlan(this.state.term);
+    console.log("Loading plan: ", this.state.Lterm);
+    let res = await loadMyPlan(this.state.Lterm);
     if (res.data.status) {
       await this.setState({
         mainData: res.data.data[0],
       });
-      alert("Plan loaded as: " + this.state.term);
+      alert("Plan loaded as: " + this.state.Lterm);
     } else {
-      alert("Sorry, plan: " + this.state.term + " not found");
+      alert("Sorry, plan: " + this.state.Lterm + " not found");
     }
   };
 
-  setTerm = async (e) => {
+  setSTerm = async (e) => {
     await this.setState({
-      term: e,
+      Sterm: e,
+    });
+  };
+  setLTerm = async (e) => {
+    await this.setState({
+      Lterm: e,
     });
   };
 
@@ -194,14 +203,14 @@ class CreateNewPlan extends Component {
 
   changeBranch = (e) => {
     this.setState({
-      branch: e
+      branch: e,
     });
   };
 
   render() {
     return (
       <div>
-        <Guidelines/>
+        <Guidelines />
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
@@ -421,39 +430,41 @@ class CreateNewPlan extends Component {
             </tbody>
           </table>
 
-          <Row className="mt-5 p-2">
-            <Col>
-              <Form onSubmit={this.saveMyPlan}>
-                <Form.Group
-                  onChange={(e) => this.setTerm(e.target.value)}
-                  as={Col}
-                  controlId="formGridZip"
-                >
-                  <Form.Control />
-                </Form.Group>
-                <Button class="center" variant="primary" type="submit">
-                  Save Plan
-                </Button>
-              </Form>
-            </Col>
-            <Col>
-              <Form onSubmit={this.loadMyPlan}>
-                <Form.Group
-                  onChange={(e) => this.setTerm(e.target.value)}
-                  as={Col}
-                  controlId="formGridZip"
-                >
-                  <Form.Control />
-                </Form.Group>
+          <div className="row justify-content-center mt-5 mb-3">
+            <Form className="mx-2" onSubmit={this.saveMyPlan}>
+              <Form.Group
+                onChange={(e) => this.setSTerm(e.target.value)}
+                as={Col}
+              >
+                <Form.Control />
+              </Form.Group>
+              <Button
+                className="btn-block"
+                variant="primary"
+                disabled={this.state.Lterm.length === 0}
+                type="submit"
+              >
+                Save Plan
+              </Button>
+            </Form>
+            <Form className="mx-2" onSubmit={this.loadMyPlan}>
+              <Form.Group
+                onChange={(e) => this.setLTerm(e.target.value)}
+                as={Col}
+              >
+                <Form.Control />
+              </Form.Group>
 
-                <Button variant="primary" type="submit">
-                  Load Plan
-                </Button>
-              </Form>
-            </Col>
-            <Col>
-            </Col>
-          </Row>
+              <Button
+                disabled={this.state.Lterm.length === 0}
+                className="btn-block"
+                variant="primary"
+                type="submit"
+              >
+                Load Plan
+              </Button>
+            </Form>
+          </div>
         </div>
       </div>
     );

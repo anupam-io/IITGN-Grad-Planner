@@ -1,10 +1,10 @@
+import url from "./../url";
 const axios = require("axios");
-const endPoint = "https://cryptic-bayou-91116.herokuapp.com/savePlan";
 
 export default async  function saveMyPlan(name, data){
   let val;
   await axios
-    .post(endPoint, {
+    .post(url+"/savePlan", {
       name: name,
       data: data,
     })
