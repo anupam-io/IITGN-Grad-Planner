@@ -26,7 +26,7 @@ class Dashboard extends Component {
   }
 
   loadPlanNames = async () => {
-    const endPoint = "/allPlans";
+    const endPoint = "https://cryptic-bayou-91116.herokuapp.com/allPlans";
     let ret = await axios.get(endPoint);
     console.log(ret);
     
