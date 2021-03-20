@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import PlanCard from "../components/PlanCard";
 import history from "../history";

@@ -7,7 +7,7 @@ import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import { singleQuery } from "./../services/contraints";
 import ConstraintMessage from "../components/ConstraintMessage";
-// import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 class CreateNewPlan extends Component {
   constructor() {
@@ -112,31 +112,31 @@ class CreateNewPlan extends Component {
     let res = await singleQuery(this.state.mainData, e);
     console.log(res);
 
-    if (e == "TC") {
+    if (e === "TC") {
       this.setState({
         TC: res,
       });
-    } else if (e == "HS") {
+    } else if (e === "HS") {
       this.setState({
         HS: res,
       });
-    } else if (e == "BS") {
+    } else if (e === "BS") {
       this.setState({
         BS: res,
       });
-    } else if (e == "OP") {
+    } else if (e === "OP") {
       this.setState({
         OP: res,
       });
-    } else if (e == "ES") {
+    } else if (e === "ES") {
       this.setState({
         ES: res,
       });
-    } else if (e == "DS") {
+    } else if (e === "DS") {
       this.setState({
         DS: res,
       });
-    } else if (e == "Other") {
+    } else if (e === "Other") {
       this.setState({
         Other: res,
       });
@@ -187,7 +187,7 @@ class CreateNewPlan extends Component {
   render() {
     return (
       <>
-        {/* <Sidebar/> */}
+        <Sidebar/>
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
