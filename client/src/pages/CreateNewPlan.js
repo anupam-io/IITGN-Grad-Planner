@@ -210,10 +210,11 @@ class CreateNewPlan extends Component {
   render() {
     return (
       <div>
-        <Guidelines />
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
+
+        <Guidelines />
 
         <div className="row justify-content-center mt-4">
           <h4 className="my-auto"> Your Branch: </h4>
