@@ -94,7 +94,7 @@ class CreateNewPlan extends Component {
     alert(
       "Plan saved as: " +
         this.state.Sterm +
-        "Go to Dashboard to Share your Plan"
+        "\nClick on `Get shareable link` to get your shareable link."
     );
   };
 
