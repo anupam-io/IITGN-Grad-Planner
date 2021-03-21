@@ -28,7 +28,7 @@ class Dashboard extends Component {
   loadPlanNames = async () => {
     const endPoint = "/allPlans";
     let ret = await axios.get(endPoint);
-    console.log(ret.data);
+    console.log(ret);
     
     await this.setState({
       allPlans: ret.data
