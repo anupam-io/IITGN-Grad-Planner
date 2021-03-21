@@ -21,15 +21,16 @@ function Navigation() {
             Logout
           </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/gen-share-link">
-            Generate Sharelable Link
+            Get shareable link
           </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/devs">
             Developers
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      
       <Form inline>
-        <FormControl type="text" placeholder="Plan name" className="mr-sm-2" />
+        <FormControl type="text" placeholder="Plan name" className="mr-4 my-auto" />
         <Button variant="outline-light">Search</Button>
       </Form>
     </Navbar>
