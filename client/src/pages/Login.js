@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { GoogleLogin } from "react-google-login";
 
-const clientId = "YOUR_CLIENT_ID.apps.googleusercontent.com";
+const clientId = "784982578023-p5e05sml014cns8qer72q0oo6cr9s00t.apps.googleusercontent.com";
 
 function Login() {
   const onSuccess = (res) => {
