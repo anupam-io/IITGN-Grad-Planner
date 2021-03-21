@@ -12,7 +12,7 @@ function ShareLink() {
       <div className="mt-5 px-3   ">
         <div className="alert alert-success" role="alert">
           <h3>Your shareable link</h3>
-          <a href={val}>{val}</a>
+          <a href={val} target="_blank" rel="noopener noreferrer">{val}</a>
         </div>
       </div>
     );

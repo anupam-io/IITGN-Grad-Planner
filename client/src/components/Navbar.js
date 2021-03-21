@@ -17,14 +17,14 @@ function Navigation() {
           <Nav.Link style={{ color: "white" }} href="/dashboard">
             Dashboard
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="/logout">
-            Logout
-          </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/gen-share-link">
-            Get shareable link
+            Share Plan
           </Nav.Link>
           <Nav.Link style={{ color: "white" }} href="/devs">
             Developers
+          </Nav.Link>
+          <Nav.Link style={{ color: "white" }} href="/logout">
+            Logout
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
