@@ -1,4 +1,6 @@
-# Glanner: A graduation planner: build in Hackrush-2021
+# Planner `(build in Hackrush-2021)`
+
+### A web portal that provides an efficient and intuitive way to track graduation requirements and grades.
 
 ## Components of the project
  - `MongoDB` online database
