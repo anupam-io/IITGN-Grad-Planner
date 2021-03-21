@@ -442,7 +442,7 @@ class CreateNewPlan extends Component {
               <Button
                 className="btn-block"
                 variant="primary"
-                disabled={this.state.Lterm.length === 0}
+                disabled={this.state.Sterm.length === 0}
                 type="submit"
               >
                 Save Plan

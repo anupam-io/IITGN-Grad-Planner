@@ -5,6 +5,7 @@
  - `Express` server
  - `React` + `react-bootstrap` client
  - Course parser from csv file
+
 ## Pages
  - Home page
  - Login Page
@@ -14,6 +15,22 @@
     - Create new plan page
     - Edit plan page(availabe through load plan)
  - Shared plan
+
+## Screenshots
+<img src="./.helpers/(1).png" width="800" />
+<img src="./.helpers/(3).png" width="800" />
+<img src="./.helpers/(7).png" width="800" />
+<img src="./.helpers/(8).png" width="800" />
+<img src="./.helpers/(9).png" width="800" />
+<img src="./.helpers/(10).png" width="800" />
+<img src="./.helpers/(11).png" width="800" />
+<img src="./.helpers/(12).png" width="800" />
+<img src="./.helpers/(13).png" width="800" />
+<img src="./.helpers/(14).png" width="800" />
+<img src="./.helpers/(15).png" width="800" />
+<img src="./.helpers/(16).png" width="800" />
+<img src="./.helpers/(17).png" width="800" />
+<img src="./.helpers/(6).png" width="800" />
 
 ## Files & Folders
  - `index.js`: Main server file
@@ -40,13 +57,16 @@
  - `sudo service mongod status`
  - `sudo service mongod stop`
  - `sudo service mongod restart`
+
 ### Stopping stucked servers in `Ubuntu`
  - `sudo fuser -k 5000/tcp`
+
 ### Stopping stucked servers in `Windows`
  - `netstat -ano | findstr :5000`
  - `taskkill /PID <ProcessId> /F`
 
 ## Flow of data
+
 ### Database storage
  - Default Sem data
  - All courses data
@@ -59,4 +79,24 @@
    - load plan data
    - load the list of saved plans
  - Computations are done in user's browser
+
+## Contributors
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/ShrutiKatpara">
+          <img src="https://avatars.githubusercontent.com/u/45987734" width="100;" alt="anupam"/>
+          <br />
+          <sub><b>Shruti Katpara</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/akcgjc007">
+          <img src="https://avatars2.githubusercontent.com/u/56300182" width="100;" alt="anupam"/>
+          <br />
+          <sub><b>Anupam Kumar</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
