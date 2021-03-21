@@ -12,6 +12,7 @@ const {onlineKey} = require("./mongo.config");
 mongoose.connect(onlineKey, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    
     useFindAndModify: false,
     useCreateIndex: true
 });
