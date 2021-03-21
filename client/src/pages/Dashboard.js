@@ -19,7 +19,10 @@ class Dashboard extends Component {
     this.state = {
       allPlans: []
     }
-    this.loadPlanNames();
+  }
+  
+  async componentDidMount(){
+    await this.loadPlanNames();
   }
 
   loadPlanNames = async () => {
