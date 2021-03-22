@@ -8,7 +8,7 @@ function Developers() {
       <Container>
         <Row>
           <Col>
-            <Profile username={"ShrutiKatpara"} />
+            <Profile username={"kshru9"} />
           </Col>
           <Col>
             <Profile username={"akcgjc007"} />
