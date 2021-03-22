@@ -2,13 +2,23 @@
 
 ### A web portal that provides an efficient and intuitive way to track graduation requirements and grades.
 
-## Components of the project
+<!--ts-->
+## [Table of contents](#table-of-contents)
+- [Components of the project](#components-of-the-project)
+    - [Pages](#pages)
+    - [Screenshots of Website](#screenshots-of-website)
+    - [Files & Folders](#files-and-folder)
+    - [How to run](#how-to-run)
+    - [Contributors](#contributors)
+<!--te-->
+
+## [Components of the project](#components-of-the-project)
  - `MongoDB` online database
  - `Express` server
  - `React` + `react-bootstrap` client
  - Course parser from csv file
 
-## Pages
+## [Pages](#pages)
  - Home page
  - Login Page
  - Logout Page
@@ -18,7 +28,7 @@
     - Edit plan page(availabe through load plan)
  - Shared plan
 
-## Screenshots
+## [Screenshots of Website](#screenshots-of-website)
 <img src="./.helpers/(1).png" width="800" />
 <img src="./.helpers/(3).png" width="800" />
 <img src="./.helpers/(7).png" width="800" />
@@ -34,7 +44,9 @@
 <img src="./.helpers/(17).png" width="800" />
 <img src="./.helpers/(6).png" width="800" />
 
-## Files & Folders
+_[Back to Table of Contents](#table-of-contents)_
+
+## [Files & Folders](#files-and-folder)
  - `index.js`: Main server file
  - `models`: Server loading file
  - `initData`: Initial semester & course data
@@ -46,7 +58,7 @@
  - - `client`: Client folder for end user
  - `scrapTimeTable`: scrapping course details from CSV
 
-## How to run?
+## [How to run](#how-to-run)
  - `yarn; cd client; yarn;`: Installing dependencies
  - `yarn c`, `yarn s`, `yarn p`: Setting up the database
  - `yarn start`: starting the server
@@ -82,7 +94,7 @@
    - load the list of saved plans
  - Computations are done in user's browser
 
-## Contributors
+## [Contributors](#contributors)
 <table>
   <tr>
     <td align="center">
