@@ -5,11 +5,11 @@
 <!--ts-->
 ## [Table of contents](#table-of-contents)
 - [Components of the project](#components-of-the-project)
-    - [Pages](#pages)
-    - [Screenshots of Website](#screenshots-of-website)
-    - [Files & Folders](#files-and-folder)
-    - [How to run](#how-to-run)
-    - [Contributors](#contributors)
+- [Pages](#pages)
+- [Screenshots of Website](#screenshots-of-website)
+- [Files & Folders](#files-and-folder)
+- [How to run](#how-to-run)
+- [Contributors](#contributors)
 <!--te-->
 
 ## [Components of the project](#components-of-the-project)
