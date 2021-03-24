@@ -94,6 +94,14 @@ _[Back to Table of Contents](#table-of-contents)_
    - load the list of saved plans
  - Computations are done in user's browser
 
+## Suggestions
+ - Reducing the padding and making it more compact.
+ - add an overview feature to show
+ - floating counter options for each type of courses
+ - Draggable components
+ - Plans only available to see for authorized people
+ - Commenting feature
+
 ## [Contributors](#contributors)
 <table>
   <tr>
