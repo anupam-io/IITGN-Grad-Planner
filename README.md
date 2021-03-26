@@ -106,7 +106,7 @@ _[Back to Table of Contents](#table-of-contents)_
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/ShrutiKatpara">
+      <a href="https://github.com/kshru9">
           <img src="https://avatars.githubusercontent.com/u/45987734" width="100;" alt="anupam"/>
           <br />
           <sub><b>Shruti Katpara</b></sub>
