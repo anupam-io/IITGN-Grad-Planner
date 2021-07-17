@@ -4,27 +4,32 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 function Navigation() {
   return (
-    <Navbar className="bg-dark px-2" sticky="top">
+    <Navbar className="bg-dark px-3 py-2" sticky="top">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Brand href="/" style={{ color: "white" }}>
-        <strong>Planner</strong>
+        <b>PLANNER</b>
       </Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link style={{ color: "white" }} href="/login">
-            Login
-          </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="/dashboard">
+          <Nav.Link className="text-light" href="/dashboard">
             Dashboard
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="/gen-share-link">
+          <Nav.Link className="text-light" href="/gen-share-link">
             Share Plan
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="/devs">
-            Developers
+          <Nav.Link className="text-light" href="/devs">
+            About Us
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="/logout">
+          <Nav.Link className="text-light" href="/login">
+            Login
+          </Nav.Link>
+          <Nav.Link className="text-light" href="/logout">
             Logout
+          </Nav.Link>
+          <Nav.Link href="/create-new-plan">
+            <Button className="m-0 p-0 px-3" variant="outline-light">
+              <b>+</b>
+            </Button>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

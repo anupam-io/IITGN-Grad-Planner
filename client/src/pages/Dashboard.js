@@ -14,10 +14,10 @@ const axios = require("axios");
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      allPlans: new Array(0)
-    }
+      allPlans: new Array(0),
+    };
   }
 
   async componentDidMount() {
@@ -30,13 +30,12 @@ class Dashboard extends Component {
     console.log(ret);
 
     await this.setState({
-      allPlans: ret.data
+      allPlans: ret.data,
     });
   };
   // await loadPlanNames();
 
   render() {
-
     return (
       <div>
         <Container className="p-2">
@@ -44,11 +43,15 @@ class Dashboard extends Component {
             <Row className="my-4">
               <Col>
                 <div className="display-4">Your Plans</div>
-                <Col>
+                <Row>
                   {this.state.allPlans.map(function (planName, index) {
-                    return <PlanCard value={planName} key={index} />;
+                    return (
+                      <Col>
+                        <PlanCard className="black-shadow half-radius p-2 m-2" value={planName} key={index} />
+                      </Col>
+                    );
                   })}
-                </Col>
+                </Row>
               </Col>
               <Col>
                 <div className="p-2">
@@ -60,7 +63,6 @@ class Dashboard extends Component {
                     <h3>Add new plan</h3>
                   </Button>
                 </div>
-                
               </Col>
             </Row>
           </div>
