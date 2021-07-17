@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 
 import Semester from "../components/Semester";
-import {
-  Form,
-  Button,
-  Col,
-  DropdownButton,
-  Dropdown,
-} from "react-bootstrap";
+import { Form, Button, Col, DropdownButton, Dropdown } from "react-bootstrap";
 import saveMyPlan from "./../services/saveMyPlan";
 import loadMyPlan from "./../services/loadMyPlan";
 import singleQuery from "./../services/contraints";
@@ -43,7 +37,8 @@ class CreateNewPlan extends Component {
       mainData: data,
     });
     this.updateSemSum();
-    alert("Default values loaded for CSE.");
+    // alert("Default values loaded for CSE.");
+    this.checkAll();
   };
 
   updateMainData = async (attr, sem, course, val) => {
@@ -56,6 +51,7 @@ class CreateNewPlan extends Component {
       mainData: temp,
     });
     this.updateSemSum();
+    this.checkAll();
   };
 
   addCourse = async (sem) => {
@@ -67,6 +63,7 @@ class CreateNewPlan extends Component {
       mainData: temp,
     });
     this.updateSemSum();
+    this.checkAll();
   };
 
   deleteCourse = async (sem, courseIndex) => {
@@ -81,6 +78,7 @@ class CreateNewPlan extends Component {
     await this.setState({ mainData: [] });
     await this.setState({ mainData: temp });
     this.updateSemSum();
+    this.checkAll();
   };
 
   saveMyPlan = async (e) => {
@@ -209,7 +207,7 @@ class CreateNewPlan extends Component {
 
   render() {
     return (
-      <div>
+      <div className="px-2 bg-dark">
         <div className="jumbotron display-4 text-center mb-0 py-3">
           Edit Plan
         </div>
@@ -262,24 +260,21 @@ class CreateNewPlan extends Component {
             })}
           </div>
 
-          <table class="table">
+          <table class="table" style={{ textAlign: "center" }}>
             <thead class="thead-dark">
               <tr>
                 <th style={{ width: "10%" }} scope="col">
                   #
                 </th>
-                <th style={{ width: "30%" }} scope="col">
+                <th style={{ width: "40%" }} scope="col">
                   Contraint
                 </th>
-                <th style={{ width: "50%", textAlign: "center" }} scope="col">
+                <th style={{ width: "50%" }} scope="col">
                   Status
-                </th>
-                <th style={{ width: "10%" }} scope="col">
-                  Check
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-light">
               <tr>
                 <th scope="row">1</th>
                 <td>Total credits check</td>
@@ -288,14 +283,6 @@ class CreateNewPlan extends Component {
                     message={this.state.TC[1]}
                     value={this.state.TC[0]}
                   />
-                </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("TC")}
-                  >
-                    Check
-                  </Button>
                 </td>
               </tr>
               <tr>
@@ -307,14 +294,6 @@ class CreateNewPlan extends Component {
                     value={this.state.HS[0]}
                   />
                 </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("HS")}
-                  >
-                    Check
-                  </Button>
-                </td>
               </tr>
               <tr>
                 <th scope="row">3</th>
@@ -324,14 +303,6 @@ class CreateNewPlan extends Component {
                     message={this.state.OP[1]}
                     value={this.state.OP[0]}
                   />
-                </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("OP")}
-                  >
-                    Check
-                  </Button>
                 </td>
               </tr>
               <tr>
@@ -343,14 +314,6 @@ class CreateNewPlan extends Component {
                     value={this.state.BS[0]}
                   />
                 </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("BS")}
-                  >
-                    Check
-                  </Button>
-                </td>
               </tr>
               <tr>
                 <th scope="row">5</th>
@@ -360,14 +323,6 @@ class CreateNewPlan extends Component {
                     message={this.state.ES[1]}
                     value={this.state.ES[0]}
                   />
-                </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("ES")}
-                  >
-                    Check
-                  </Button>
                 </td>
               </tr>
 
@@ -380,14 +335,6 @@ class CreateNewPlan extends Component {
                     value={this.state.DS[0]}
                   />
                 </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("DS")}
-                  >
-                    Check
-                  </Button>
-                </td>
               </tr>
 
               <tr>
@@ -398,14 +345,6 @@ class CreateNewPlan extends Component {
                     message={this.state.Other[1]}
                     value={this.state.Other[0]}
                   />
-                </td>
-                <td>
-                  <Button
-                    variant="warning"
-                    onClick={() => this.checkContraint("Other")}
-                  >
-                    Check
-                  </Button>
                 </td>
               </tr>
 
@@ -421,11 +360,6 @@ class CreateNewPlan extends Component {
                       value={this.state.all[0]}
                     />
                   </strong>
-                </td>
-                <td>
-                  <Button className="mt-auto px-2" onClick={this.checkAll}>
-                    <strong>Check All</strong>
-                  </Button>
                 </td>
               </tr>
             </tbody>

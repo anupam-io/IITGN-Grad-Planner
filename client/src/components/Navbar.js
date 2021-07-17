@@ -4,10 +4,10 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 function Navigation() {
   return (
-    <Navbar className="bg-primary" sticky="top">
+    <Navbar className="bg-dark px-2" sticky="top">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Brand href="/" style={{ color: "white" }}>
-        Planner
+        <strong>Planner</strong>
       </Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -28,9 +28,13 @@ function Navigation() {
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
-      
+
       <Form inline>
-        <FormControl type="text" placeholder="Plan name" className="mr-4 my-auto" />
+        <FormControl
+          type="text"
+          placeholder="Plan name"
+          className="mr-4 my-auto"
+        />
         <Button variant="outline-light">Search</Button>
       </Form>
     </Navbar>

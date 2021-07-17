@@ -13,14 +13,14 @@ function Semester(props) {
 
   return (
     <div
-      className="m-0 py-4 alert-primary"
+      className="m-0 py-4 alert-primary bg-light"
       style={{ borderRadius: "5px" }}
     >
       <h2>Semester {props.number + 1}</h2>
 
       <div className="row">
-        <div className="col-1" style={{ margin: "auto" }}>
-          <strong className="h1">{props.sum}</strong>
+        <div className="col-1 display-4" style={{ margin: "auto" }}>
+          <b>{props.sum}</b>
         </div>
 
         <div className="row col-10">
@@ -41,7 +41,7 @@ function Semester(props) {
           })}
         </div>
 
-        <div className="col-1" style={{ margin: "auto" }}>
+        <div className="col-1 soft-zoom" style={{ margin: "auto" }}>
           <Button
             onClick={addCourse}
             style={{ fontSize: "1em" }}
