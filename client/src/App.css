@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.black-shadow {
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.1) !important;
+}
+.half-radius {
+  border-radius: 0.5em !important;
+}
+
+.soft-zoom:hover {
+  transform: scale(1.1);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
