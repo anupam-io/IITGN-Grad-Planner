@@ -42,7 +42,7 @@ function SingleCourse(props) {
   };
 
   return (
-    <div className="col-md-4 col-lg-3 soft-zoom">
+    <div className="col-md-4 col-lg-3">
       <div className={"m-2 p-2 black-shadow half-radius bg-" + decideColor()}>
         <button
           type="button"
